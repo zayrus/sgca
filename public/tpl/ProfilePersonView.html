@@ -1,0 +1,29 @@
+  <div class="row well">
+  <div class="col-md-6" >
+    <div class='row'>
+    <div class="col-md-12" >
+      <h3><%= utils.fetchLabel(utils.userPredicateList, predicate) %> </h3>
+      <p> <%= name %> </p>
+      <p><strong>Alias: </strong><%= displayName %></p>
+      <p><strong>Identificación: </strong><%= nickName %></p>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-6" >
+    <div class='row'>
+      <% 
+        if(contactinfo)
+          _.each(contactinfo,function(contact){ %>
+
+            <p><strong><%= contact.tipocontacto %> </strong><%= contact.subcontenido %></p>
+            <p> <%= contact.contactdata %> </p>
+            <hr>
+
+        <%  });
+        %>
+
+    </div>
+  </div>
+</div>
+
+<hr>

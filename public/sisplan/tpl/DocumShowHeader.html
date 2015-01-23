@@ -1,0 +1,11 @@
+<div class="row well">
+	<div class="col-xs-4 col-sm-4" >
+		<p><strong> Estado/ Prioridad: </strong><%= utils.fetchLabel(utils.paOptionList, estado_alta) %></p>
+		<p><strong> Nivel de ejecución: </strong><%= utils.fetchLabel(utils.documexecutionOptionList, nivel_ejecucion) %></p>
+	</div>
+	<div class="col-xs-8 col-sm-8 pull-right" >
+		<span class='pull-right'><strong><%= persona %></strong></span>
+		<span class='pull-right'><%= description %></span>
+	</div>
+</div>
+

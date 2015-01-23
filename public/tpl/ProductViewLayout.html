@@ -1,0 +1,18 @@
+<!--  ====================  ProductList LAYOUT SIDE-BAR ==========================  -->
+<div class="row">
+<div class="col-md-2">
+    <div class="panel panel-default">
+              <div class='panel-heading'>Procedencia seleccionado</div>
+                   <ul class="list-group">
+                       <li class="list-group-item"><button class='btn btn-default btn btn-default-block btn btn-default-link prjview'><%= utils.viewData.currentProject %></button>
+                       </li>
+                       <input type='hidden' placeholder='proyecto' disabled class='input-small' id='project[_id]' name='project[_id]' value=<%= project['_id'] %> >
+                   </ul>
+    </div>
+</div><!--/col-md-2 side bar-->
+
+<!-- START Content  tabs -->
+<div class="col-md-9">
+	<div id="listcontent" class="content row"></div>
+</div><!--/col-md-9-->
+</div><!--row -->

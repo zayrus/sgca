@@ -1,0 +1,88 @@
+<!--  ====================  ProductList LAYOUT SIDE-BAR ==========================  -->
+<div class="row row-offcanvas row-offcanvas-left">
+<!-- START selector column -->
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class='panel-heading'>Persona seleccionado</div>
+    <div class='panel-body'></div>
+    <ul class="list-group">
+      <li class="list-group-item"><button id='mastevale' class='btn btn-default btn btn-default-block btn btn-default-link prselected'><%= utils.selectedPersons.getSelectedLabel() %></button></li>
+    </ul>
+  </div>
+ 
+
+ <div class="panel panel-default">
+    <div class='panel-heading'>Selectores</div>
+    <div class='panel-body'></div>
+    <ul class="list-group js-query-person">
+      <li class="list-group-item"><input type='text' placeholder='identificador' class='input-small' id='nickName' name='nickName' value=<%= nickName %>></li>
+      <li class="list-group-item"><input type='text' placeholder='tipo' class='input-small' id='tipopersona' name='tipopersona' value=<%= tipopersona %>></li>
+      <li class="list-group-item"><input type='text' placeholder='descriptor' class='input-small' id='taglist' name='taglist' value=<%= taglist %> ></li>
+      <li class="list-group-item"><input type="checkbox" name='queryjuridico' id='queryjuridico' value=<%= queryjuridico %> 
+        <%= (queryjuridico  ? 'checked' : '') %>> ¿Filtra por tipo jurídico?</li>
+      <li class="list-group-item"><input type="checkbox" name='pjuridica' id='pjuridica' class='js-toggle' 
+        value=<%= pjuridica %> <%= (pjuridica  ? 'checked' : '') %>> --¿Es persona jurídica?</li>
+      <li class="list-group-item"><input type="checkbox" name='pfisica' id='pfisica' class='js-toggle'
+        value=<%= pfisica %> <%= (pfisica  ? 'checked' : '') %>> --¿Es persona física?</li>
+      <li class="list-group-item"><input type="checkbox" name='pideal' id='pideal' class='js-toggle'
+        value=<%= pideal %> <%= (pideal  ? 'checked' : '') %>> --¿Es persona ideal?</li>
+      <li class="list-group-item"><input type="checkbox" name='porganismo' id='porganismo'class='js-toggle'
+       value=<%= porganismo %> <%= (porganismo  ? 'checked' : '') %>> --¿Es porganismo?</li>
+      <li class="list-group-item"><input type="checkbox" name='adherente' id='adherente'
+        value=<%= adherente %> <%= (adherente  ? 'checked' : '') %>> Roles: ¿Es adherente?</li>
+    </ul>
+  </div>
+
+</div><!--/col-md-3 side bar-->
+<!-- START Content  tabs -->
+<div class="col-md-9">
+<!-- START head-row -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Personas</a>
+    </div>
+
+    <div id='mainmenu' class="collapse navbar-collapse">
+
+        <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acciones<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a class='selperson' ><span class="glyphicon glyphicon-edit"></span>seleccionar persona</a></li>
+                    <li><a class='dselperson' ><span class="glyphicon glyphicon-edit">deseleccionar persona</a></li>
+                    <li class="divider"></li>
+                    <li><a class='addmembers' ><span class="glyphicon glyphicon-edit">vincular miembros</a></li>
+                    <li><a class='addassociated' ><span class="glyphicon glyphicon-edit">vincular relacionados</a></li>
+                    <li class="divider"></li>
+                    <li><a class='btn btn-default btn btn-default-link managetable' >seleccionar columnas</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuevo<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#personas/add">Persona</a></li>
+                    <li><a href="#proyectos/add">Procedencia</a></li>
+                </ul>
+            </li>
+
+
+
+        </ul>
+
+    </div>
+
+  </div><!--ends container -->
+</nav>
+
+  <div id="listcontent" class="content row"></div>    	      
+
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

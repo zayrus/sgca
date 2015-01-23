@@ -1,0 +1,18 @@
+<a href="#ver/proyecto/<%= _id %>" class="thumbnail plain" style="text-align: center;">
+    <svg class='svgcontainer' width=270 height=70>
+        <rect x='1' y='1' width="268" height="67" fill-opacity=<%= 1-utils.viewData.project.fillOpacity[nivel_ejecucion]%> 
+              style="fill:rgb(190,190,190);stroke-width:0;stroke:rgb(0,0,0)"/>
+    	
+    	<text x=25  y=35  font-size=30 fill=<%= utils.viewData.project.eventFillColor[nivel_importancia] %> 
+              fill-opacity=<%= utils.viewData.project.fillOpacity[nivel_ejecucion]%> font-family='Arvo' ><%= utils.viewData.project.eventText[genero] %></text>
+        <text x=35 y=60  font-size=15 fill-opacity=<%= utils.viewData.project.fillOpacity[nivel_ejecucion]%> fill='black' font-family='Arvo' ><%= utils.viewData.project.ispropioText[isPropio] %></text> 
+    	<text x=140 y=35 font-size=30 fill-opacity=<%= utils.viewData.project.fillOpacity[nivel_ejecucion]%> fill='black' font-family='Arvo' ><%= eventdatestr.substring(0,5) %></text>
+    </svg>
+
+
+    <!--  img src="<%= picture === null ? 'pics/prj-IC-M-TV.png' : 'pics/' + picture %>" height="150" width="125" alt=""  -->
+    <h4><%= denom %></h4>
+    <i class="icon-globe"></i> <%= city %><br/><%= organismo %>
+    <br/><%= responsable %><br/> [<%= nivel_ejecucion %>]
+    <br/> <%= eventdatestr %>
+</a>

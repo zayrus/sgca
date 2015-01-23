@@ -1,0 +1,19 @@
+<div class="row well">
+	<div class="col-xs-3 col-sm-3" >
+		<p><strong><%= entitytype %>: </strong><%= entity %> Ult modif: <%= new Date(feultmod).toLocaleTimeString() %> </p>
+		<% if(docum!== 'NONE'){ %>
+		<p><strong><%= docum %>: </strong><%= documslug %></p>
+		<% } %>
+		
+	</div>
+	<div class="col-xs-3 col-sm-3" >
+		<p><strong>Comprobante: </strong><%= docum %>
+		<strong>Movimiento: </strong><%= utils.fetchLabel(utils.tipomovpdiarioOptionList, tipomov) %></p>
+	</div>
+	<div class="col-xs-6 col-sm-6" >
+		<p><%= slug %><br>
+		<strong>Actividad: </strong><%= utils.fetchLabel(utils.tipomovpdiarioOptionList, activity) %>
+		<strong>Resultado: </strong><%= result %></p>
+	</div>
+</div>
+<hr>

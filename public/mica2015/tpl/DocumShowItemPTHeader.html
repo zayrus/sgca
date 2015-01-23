@@ -1,0 +1,57 @@
+<div class="row well">
+	<div class="col-xs-7 col-sm-7" >
+		<div class='row'>
+		<div class="col-xs-6 col-sm-6" >
+		<p><strong>Fecha Revision: </strong><%= fept %></p>
+		<p><strong>Revisión Nro.: </strong><%= revision %></p>
+		<p><strong>Bloques de Video: </strong><%= vbloques %></p>
+		<p><strong>Resolución: </strong><%= resolucion %></p>
+		</div>
+		<div class="col-xs-6 col-sm-6" >
+		<p><strong>Frame rate: </strong><%= framerate %></p>
+		<p><strong>Aspect ratio: </strong><%= aspectratio %></p>
+		<p><strong>Formato original: </strong><%= formatoorig %></p>
+		<p><strong>Rol: </strong><%= rolinstancia %></p>
+		<p><strong>Soporte entrega: </strong><%= sopoentrega %></p>
+		</div>
+		</div>
+	</div>
+	<div class="col-xs-5 col-sm-5" >
+		<div class='row'>
+		<span class='col-sm-12 pull-right'><h3><%= utils.fetchLabel(utils.estadoqcOptionList, estado_qc) %></h3></span>
+		<span class='col-sm-12 pull-right'><strong>Código: <%=product %></strong> <%= pslug %></span>
+		<span class='col-sm-12 pull-right'><%= description %></span>
+		</div>
+	</div>
+</div>
+<div class="row" >
+	<ul class="col-xs-3 col-sm-3 list-group">
+		<li class="list-group-item" style="background-color: rgba(86,61,124,.15)"><strong>AUDIO: 1</strong></li>
+		<li class="list-group-item"><strong>Contenido: </strong><%= utils.fetchLabel(utils.audiocontentOptionList, au1_content) %></li>
+		<li class="list-group-item"><strong>Canal: </strong><%= utils.fetchLabel(utils.audiocanalOptionList, au1_channel) %></li>
+		<li class="list-group-item"><strong>Nivel: </strong><%= au1_piclevel %></li>
+	</ul>
+	<ul class="col-xs-3 col-sm-3 list-group">
+		<li class="list-group-item" style="background-color: rgba(86,61,124,.15)"><strong>AUDIO: 2</strong></li>
+
+		<li class="list-group-item"><strong>Contenido: </strong><%= utils.fetchLabel(utils.audiocontentOptionList, au2_content) %></li>
+		<li class="list-group-item"><strong>Canal: </strong><%= utils.fetchLabel(utils.audiocanalOptionList, au2_channel) %></li>
+
+		<li class="list-group-item"><strong>Nivel: </strong><%= au2_piclevel %></li>
+	</ul>
+	<ul class="col-xs-3 col-sm-3 list-group">
+		<li class="list-group-item" style="background-color: rgba(86,61,124,.15)"><strong>AUDIO: 3</strong></li>
+
+		<li class="list-group-item"><strong>Contenido: </strong><%= utils.fetchLabel(utils.audiocontentOptionList, au3_content) %></li>
+		<li class="list-group-item"><strong>Canal: </strong><%= utils.fetchLabel(utils.audiocanalOptionList, au3_channel) %></li>
+		<li class="list-group-item"><strong>Nivel: </strong><%= au3_piclevel %></li>
+	</ul>
+	<ul class="col-xs-3 col-sm-3 list-group">
+		<li class="list-group-item" style="background-color: rgba(86,61,124,.15)"><strong>AUDIO: 4</strong></li>
+
+		<li class="list-group-item"><strong>Contenido: </strong><%= utils.fetchLabel(utils.audiocontentOptionList, au4_content) %></li>
+		<li class="list-group-item"><strong>Canal: </strong><%= utils.fetchLabel(utils.audiocanalOptionList, au4_channel) %></li>
+		<li class="list-group-item"><strong>Nivel: </strong><%= au4_piclevel %></li>
+	</ul>
+</div>
+<hr>

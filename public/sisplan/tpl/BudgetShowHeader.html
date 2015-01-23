@@ -1,0 +1,60 @@
+<div class="row well">
+		<div class="col-xs-12 col-md-12" >
+		<div class='row'>
+			<table class="table table-condensed table-bordered">
+				<thead>
+					<tr>
+						<th>Nodo</th>
+						<th>Area</th>
+						<th>Acción</th>
+						<th>Fecha Prevista</th>
+						<th>Trim</th>
+						<th>Tramita</th>
+						<th>ProgPresu</th>
+						<th>Inci/Act</th>
+						<th>Cantidad</th>
+						<th>UME</th>
+						<th>Importe</th>
+					</tr> 
+				</thead>
+				<tbody>
+					<tr>
+						<td><%= nodo %></td>
+						<td><%= area %></td>
+						<td><%= parent_cnumber %></td>
+						<td><%= fecha_prev %></td>
+						<td><%= trim_fiscal %></td>
+						<td><%= tramita %></td>
+						<td><%= presuprog %></td>
+						<td><%= presuinciso %></td>
+						<td><%= cantidad %></td>
+						<td><%= ume %></td>
+						<td><%= importe %></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-md-12" >
+	<table class="table table-condensed table-bordered">
+		<thead>
+		<tr>
+			<th>Estado</th>
+			<th>Ejecución</th>
+			<th>Progama raiz</th>
+			<th>Acción</th>
+			<th>Descriptores</th>
+		</tr>
+		<tbody>
+		<tr>
+			<td><%= utils.fetchLabel(utils.actionAltaOptionList, estado_alta) %></td>
+			<td><%= utils.fetchLabel(utils.budgetEjecucionOptionList, nivel_ejecucion) %></td>
+			<td><%= program_cnumber %></td>
+			<td><%= parent_cnumber %></td>
+			<td><%= descriptores %></td>
+		</tr> 
+		</tbody>
+	</table>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="col-md-5">
+  
+    <a href="#proyectos/<%= prj._id %>" style="text-align: center;">
+        <svg class='svgcontainer' width=270 height=70>
+            <rect x='1' y='1' width="268" height="67" fill-opacity=<%= 1-utils.viewData.project.fillOpacity[nivel_ejecucion]%> 
+                  style="fill:rgb(190,190,190);stroke-width:0;stroke:rgb(0,0,0)"/>
+          
+          <text x=40  y=35  font-size=30 fill=<%= utils.viewData.project.eventFillColor[prj.nivel_importancia] %> 
+                  fill-opacity=<%= utils.viewData.project.fillOpacity[prj.nivel_ejecucion]%> font-family='Arvo' ><%= utils.viewData.project.eventText[prj.genero] %></text>
+            <text x=110 y=60  font-size=15 fill-opacity=<%= utils.viewData.project.fillOpacity[prj.nivel_ejecucion]%> fill='black' font-family='Arvo' ><%= utils.viewData.project.ispropioText[prj.isPropio] %></text>
+          <text x=120 y=35 font-size=30 fill-opacity=<%= utils.viewData.project.fillOpacity[prj.nivel_ejecucion]%> fill='black' font-family='Arvo' ><%= prj.eventdatestr.substring(0,5) %></text>
+        </svg>
+        <h4><%= prj.denom %></h4>
+        <i class="icon-globe"></i> <%= prj.city %><br/><%= prj.organismo %>
+        <br/><%= prj.responsable %><br/> [<%= prj.nivel_ejecucion %>]
+        <br/> <%= prj.eventdatestr %>
+    </a>  
+
+</div>
+<div class="col-md-5">
+  <h1><%= prj.denom %></h1>
+  <p><%= prj.description %></p>
+</div>

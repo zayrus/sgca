@@ -1,0 +1,22 @@
+<div class="row well">
+	<div class="col-xs-6 col-sm-6" >
+		<div class='row'>
+		<div class="col-xs-12 col-sm-12" >
+			<p><strong>Tipo de emisión: </strong><%= utils.fetchLabel(utils.tipoemisOptionList, tipoemis) %></p>
+			<p><strong>Cobertura: </strong><%= utils.fetchLabel(utils.coberturaOptionList, cobertura) %></p>
+			<p><strong>Fuente: </strong><%= utils.fetchLabel(utils.fuenteOptionList, fuente) %></p>
+		</div>
+		</div>
+	</div>
+	<div class="col-xs-6 col-sm-6" >
+		<div class='row'>
+		<span class='col-sm-12 pull-right'><h3> <%= fedesde %></h3></span>
+		<span class='col-sm-12 pull-right'><strong>Señal: </strong> <%= persona %></span>
+
+		<span class='col-sm-12 pull-right'> <%= slug %></span>
+		<span class='col-sm-12 pull-right'><%= description %></span>
+		</div>
+	</div>
+</div>
+
+<hr>

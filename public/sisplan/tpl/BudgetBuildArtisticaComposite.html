@@ -1,0 +1,66 @@
+<div class="panel-body">
+	<div class='row'>
+
+		<div class="col-xs-12 col-md-12">
+
+			<table class="table table-condensed table-bordered">
+					<colgroup>
+						<col style='width:  3%;'>
+						<col style='width: 15%;'>
+						<col style='width: 30%;'>
+						<col style='width:  4%;'>
+						<col style='width:  7%;'>
+						<col style='width: 10%;'>
+						<col style='width: 14%;'>
+						<col style='width: 14%;'>
+						<col style='width:  3%;'>
+					</colgroup>
+					<thead>
+						<tr>
+							<td><input class='js-head-chbx' name='headchbx' type='checkbox'></td>
+							<th><%= utils.fetchLabel(utils.tipoBudgetMovimList, tgasto) %></th>
+							<th><%= slug %></th>
+							<th>Ok?</th>
+							<th>Cantidad</th>
+							<th>UME</th>
+							<th><span class='pull-right'>Costo Unit</span></th>
+							<th><span class='pull-right'>Costo</span></th>
+							<th></th>
+						</tr> 
+
+					</thead>
+
+					<tbody>
+						<tr>
+							<td><input class='js-row-chbx' name='rowchbx' type='checkbox'></td>
+							<td><button class='btn-link js-edit'  title='editar'><span class='glyphicon glyphicon-edit'></span></button><button class='btn-link js-clone' title='entidades relacionadas' ><span class='glyphicon glyphicon-plus-sign'></span></button></td>
+							<td>Costo total de: <%= utils.fetchLabel(utils.tipoBudgetMovimList, tgasto) %></td>
+							<td><button class='btn-link js-isactive'  title='registro activo?'><span class='glyphicon <%= isactive ? "glyphicon-ok-circle" : "glyphicon-ban-circle" %>'></span></button></td>
+							<td><input class='form-control' id='cantidad' name='cantidad' value='<%= cantidad %>'></td>
+							<td><%= utils.fetchLabel(utils.umeList, ume) %><strong><%= (freq != "1" ? " x " + freq + " " + utils.fetchLabel(utils.umeFreqList, umefreq): "") %></strong></td>
+							<td><span class="pull-right"><%= accounting.formatNumber(punit) %></span></td>
+							<td><span class="pull-right"><strong><%= accounting.formatNumber(importe) %></strong></span></td>
+							<td><button class='btn-link js-trash'  title='eliminar'><span class='glyphicon glyphicon-trash'></span></button></td>
+						</tr>
+					</tbody>
+			</table>
+
+		</div>
+		<div class="col-xs-12 col-md-12">
+			<table class="table table-condensed table-bordered">
+					<colgroup>
+						<col style='width:  3%;'>
+						<col style='width: 15%;'>
+						<col style='width: 30%;'>
+						<col style='width:  4%;'>
+						<col style='width:  7%;'>
+						<col style='width: 10%;'>
+						<col style='width: 14%;'>
+						<col style='width: 14%;'>
+						<col style='width:  3%;'>
+					</colgroup>
+					<tbody id='budgetitems'></tbody>
+			</table>
+		</div>
+	</div>
+</div>

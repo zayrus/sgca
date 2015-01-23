@@ -1,0 +1,26 @@
+<!--  ====================   SIDE-BAR ==========================  -->
+<div class="row row-offcanvas row-offcanvas-left">
+
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class='panel-heading'>Selectores</div>
+    <div class='panel-body'>Filtros de búsqueda</div>
+    <ul class="list-group">
+      <li class="list-group-item"><input type='text' placeholder='responsable' class='form-control input-sm' id='responsable' name='responsable' value=<%= responsable %> ></li>
+      <li class="list-group-item"><input type='text' placeholder='contraparte' class='form-control input-sm' id='contraparte' name='contraparte' value=<%= contraparte %> ></li>
+      <li class="list-group-item"><datalist id='ejecucionList'> </datalist>
+          <input type="text" class='form-control input-sm'  
+            multiple list='ejecucionList' placeholder='nivel de ejecucion' 
+            id="nivel_ejecucion" name="nivel_ejecucion" value=<%= nivel_ejecucion %> ></li>
+    </ul>
+  </div>
+</div>
+
+<!-- START Content  tabs -->
+<div class="col-md-9">
+<div class="tabbable">
+        <div id="listcontent" class="row"></div>
+</div> <!--  end TABABBLE -->
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

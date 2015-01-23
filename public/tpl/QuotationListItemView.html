@@ -1,0 +1,24 @@
+<a href="#requisitorias/<%= _id %>" class="plain" >
+  <div class='row col-md-9' >
+    <svg class='svgcontainer' width=800 height=27>
+      <text x=10  y=20  font-size=18 fill='black' 
+              fill-opacity=1 font-family='Arvo' >Nro.: <%= nro %></text>
+      <text x=200  y=20  font-size=18 fill=<%= utils.viewData.resource.eventFillColor[nivel_importancia] %> 
+          fill-opacity=<%= utils.viewData.resource.fillOpacity[nivel_ejecucion]%> 
+          font-family='Arvo' ><%= slug %></text>
+      <text x=600  y=20  font-size=18 fill='black' 
+            fill-opacity=1 font-family='Arvo' >Necesidad: <%= fenecstr %></text>
+    </svg>
+  </div>
+  <div class='row col-md-9' >
+    <div class='col-md-5'><strong>Proveedor:</strong> <%=provname %><br/><%=provdata %></div> 
+    <div class='col-md-4'><strong>Solicitante:</strong> <%=solname %><br/><%=soldata %></div> 
+  </div>
+  <div class='row col-md-9' >
+    <div class='col-md-5'><h4>Condiciones generales:</h4><%= gencond %></div> 
+    <div class='col-md-4'><h4>Condiciones particulares:</h4><%= partcond %></div> 
+  </div>
+  <div class='row col-md-9' style='border:2px solid #aaa; text-align: center;'>
+   [fecha sol: <%= fesolstr %>] - [<%= nivel_ejecucion %>] - [<%= nivel_importancia %>] - [<%= estado_alta %>] - [<%= rubro %>]
+  </div>
+</a>

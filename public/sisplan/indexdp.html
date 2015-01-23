@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MCN::gestion</title>
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="modulo de gestion">
+    <meta name="author" content="ciardi">
+
+    <meta name="geo.position" content="-34.60899163;-58.3702313817" />
+    <meta name="ICBM" content="-34.60899163;-58.3702313817" />
+    <meta name="DC.title" content="Ministerio de Planificación Federal Inversión Pública y Servicios" />
+    <meta name="geo.country" content="AR" />
+    <meta name="geo.region" content="AR-C" />
+    <meta name="geo.placename" content="Buenos Aires, Ciudad Autónoma de Buenos Aires, República Argentina" />
+    <meta name="Language" content="Spanish" />
+    <meta name="Robots" content="all" />
+    <meta name="description" content="Módulo de gestió del BACUA" />
+    <meta name="keywords" content="Ministerio de Planificación Federal Inversión Pública y Servicios, MinPlan, Ministerio de Planificación, Subsecretaría de Coordinación y Control de Gestión, Renuncia Voluntaria al Subsidio del Estado Nacional, Nomina adherentes, Subsidios," />
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media='screen'   >
+    <link href="css/bootstrap-theme.css" rel="stylesheet" media='screen'   >
+        
+    <link href="css/fuelux.min.css" rel="stylesheet" >
+    <link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet" media='screen'>
+
+    <style type="text/css">
+
+    /*
+        <link href="css/jquery-ui-1.10.3.theme.css" rel="stylesheet" media='screen'>
+        [class*="col-"] {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          background-color: #eee;
+          border: 1px solid #ddd;
+          background-color: rgba(86,61,124,.15);
+          border: 1px solid rgba(86,61,124,.2);
+        }
+
+    */
+        table.hours { table-layout: fixed; }
+        table.hours th, table td { overflow: hidden; }
+
+    </style>
+    <!--link href="css/backbone-forms-bootstrap.css" rel="stylesheet" -->
+
+    <!-- script src="http://use.edgefonts.net/andika.js"></script -->
+    <!-- script src="http://use.edgefonts.net/arvo.js"></script -->
+    <script src="/css/andika.js"></script>
+    <script src="/css/arvo.js"></script>
+
+    <script>
+   </script>
+
+</head>
+
+<body>
+    <div id="header-region" class='header'></div>
+    <div id="dialog-region"></div>
+
+    <!-- Off Canvas
+    ================================================== -->
+    <div id="main-region" class="container"></div><!--/container -->
+
+    <div id="footer-region" class="container">
+    <hr>
+    <footer class="footer">
+        <table class='table'>
+            <tr>
+                <td ><a href="http://www.presidencia.gov.ar/" target="_blank" title="Presidencia de la Nación Argentina"  ><img src="/img/logo-presidencia-de-la-nacion-footer.png" style="width: 246;height: 46px;margin: 0;"alt="Logo, Presidencia de la Nación Argentina" /></a></td>
+
+                <td><a href="http://www.cultura.gob.ar/" target="_blank" title="Ministerio de Cultura de la Nación Argentina"  ><img src="/img/logo-cultura-nacion.png" style="width: 275;height: 46px;margin: 0;" alt="Logo, Ministerio de Cultura de la Nación Argentina" /></a></td>
+        </table>
+    </footer>
+
+        <div class="input-group date">
+            <input type="text" id='mytest01' class="form-control" value="2014/12/12"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+        <div class="datepicker dropdown" id="myDatepicker">
+            <div class="input-append">
+                <div class="dropdown-menu"></div>
+                    <input type="text" class="span2" value="" data-toggle="dropdown">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                        <i class="icon-calendar"></i>
+                    </button>
+            </div>
+        </div>
+
+<form method='post'>
+    <div class='row' style='margin-top: 100px'>
+        <div class='col-sm-12'>
+            Using example markup from the datepicker documentation.  If you try to select a date, the form gets submitted.  The reason is that html &lt;button&gt; tags are being used in most places without type="button" so they default to submit buttons.  Even if you change all the button tags in the example markup it still doesn't work because fuelux generates buttons for the other parts of the ui.
+    <div class='row'>
+        <div class='col-sm-4'>
+            <div class="datepicker" data-initialize="datepicker" id="myDatepicker">
+                <div class="input-group">
+                    <input class="form-control" id="myDatepickerInput" type="text" />
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-calendar"></span>
+ <span class="sr-only">Toggle Calendar</span>
+
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right datepicker-calendar-wrapper" role="menu">
+                            <div class="datepicker-calendar">
+                                <div class="datepicker-calendar-header">
+                                    <button class="prev"><span class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous Month</span>
+                                    </button>
+                                    <button class="next"><span class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next Month</span>
+                                    </button>
+                                    <button class="title"> <span class="month">
+                <span data-month="0">January</span>
+ <span data-month="1">February</span>
+ <span data-month="2">March</span>
+ <span data-month="3">April</span>
+ <span data-month="4">May</span>
+ <span data-month="5">June</span>
+ <span data-month="6">July</span>
+ <span data-month="7">August</span>
+ <span data-month="8">September</span>
+ <span data-month="9">October</span>
+ <span data-month="10">November</span>
+ <span data-month="11">December</span>
+</span> <span class="year"></span>
+
+                                    </button>
+                                </div>
+                                <table class="datepicker-calendar-days">
+                                    <thead>
+                                        <tr>
+                                            <th>Su</th>
+                                            <th>Mo</th>
+                                            <th>Tu</th>
+                                            <th>We</th>
+                                            <th>Th</th>
+                                            <th>Fr</th>
+                                            <th>Sa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <div class="datepicker-calendar-footer">
+                                    <button class="datepicker-today">Today</button>
+                                </div>
+                            </div>
+                            <div class="datepicker-wheels" aria-hidden="true">
+                                <div class="datepicker-wheels-month">
+                                     <h2 class="header">Month</h2>
+
+                                    <ul>
+                                        <li data-month="0">
+                                            <button>Jan</button>
+                                        </li>
+                                        <li data-month="1">
+                                            <button>Feb</button>
+                                        </li>
+                                        <li data-month="2">
+                                            <button>Mar</button>
+                                        </li>
+                                        <li data-month="3">
+                                            <button>Apr</button>
+                                        </li>
+                                        <li data-month="4">
+                                            <button>May</button>
+                                        </li>
+                                        <li data-month="5">
+                                            <button>Jun</button>
+                                        </li>
+                                        <li data-month="6">
+                                            <button>Jul</button>
+                                        </li>
+                                        <li data-month="7">
+                                            <button>Aug</button>
+                                        </li>
+                                        <li data-month="8">
+                                            <button>Sep</button>
+                                        </li>
+                                        <li data-month="9">
+                                            <button>Oct</button>
+                                        </li>
+                                        <li data-month="10">
+                                            <button>Nov</button>
+                                        </li>
+                                        <li data-month="11">
+                                            <button>Dec</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="datepicker-wheels-year">
+                                     <h2 class="header">Year</h2>
+
+                                    <ul></ul>
+                                </div>
+                                <div class="datepicker-wheels-footer clearfix">
+                                    <button class="btn datepicker-wheels-back"><span class="glyphicon glyphicon-arrow-left"></span><span class="sr-only">Return to Calendar</span>
+                                    </button>
+                                    <button type="button" class="btn datepicker-wheels-select">Select <span class="sr-only">Month and Year</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    </body>
+</html>
+
+
+
+    </div>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/underscore-min.js"></script>
+<script src="/lib/backbone-min.js"></script>
+<script src="/lib/backbone.picky.min.js"></script>
+<!-- script src="lib/backbone.syphon.js"></script -->
+    
+<script src="/lib/backbone.marionette.min.js"></script>
+
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/fuelux.min.js"></script>    
+<script src="lib/jquery-ui.min.js"></script>
+<script src="/lib/backbone-forms.min.js"></script>
+<!-- script src="lib/list.min.js"></script  -->
+<script src="/lib/backbone.bootstrap-modal.js"></script>
+<script src="/lib/backbone-forms-bootstrap.js"></script>
+
+
+<!-- script src="/lib/bootstrap-datepicker.js"></script  -->
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script -->
+<script src="lib/moment-with-langs.min.js"></script>
+
+    
+<script>
+    $('#mytest01').datepicker({
+        format: "yyyy/mm/dd",
+        startDate: "2012-01-01",
+        endDate: "2015-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+    });
+
+
+
+
+    $('#myDatepicker').datepicker({
+        date: new Date(),
+        dropdownWidth: 170,
+        restrictDateSelection: true
+    });
+    // initialization with null value
+    // $('#myDatepicker').datepicker('getDate') will return null until date is set (useful for form validation)
+    $('#myDatepicker').datepicker({
+        date: null
+    });
+    // allowing past date selection
+    $('#myDatepicker').datepicker({
+        restrictDateSelection: false
+    });
+    // custom dropdown menu width (value must be an integer)
+    $('#myDatepicker').datepicker({
+        dropdownWidth: 200
+    });
+    //---------------------------------------------------
+    // Moment JS integration
+    // Additional Features:
+    // 1. Input parsing (on blur date will be parsed)
+    // 2. Moment JS Culture Support
+    // - Check out http://momentjs.com/docs/#/i18n/changing-language/ for language options
+    // 3. Moment JS Format Support
+    // - We only support the Moment JS format codes of "L" or "l"
+    // - http://momentjs.com/docs/#/customization/long-date-formats/
+    // Requirements:
+    // 1. Moment JS with Langs. In either of the following forms:
+    // - window.moment
+    // - RequireJS modules defined as "moment"
+    // 2. Moment JS with Langs found here --> http://momentjs.com/downloads/moment-with-langs.js
+    //---------------------------------------------------
+    $('#myDatepicker').datepicker({
+        momentConfig: {
+        culture: 'en', // change to specific culture
+        formatCode: 'L' // change for specific format
+        }
+    });
+
+
+</script>
+
+
+</body>
+</html>

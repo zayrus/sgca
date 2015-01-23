@@ -1,0 +1,18 @@
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" 
+    href="#asset_<%= _id %>" style='display:inline;'><i class="icon-edit"></i></a>
+  </div>
+  <div id="asset_<%= _id %>" class="accordion-body in collapse">
+	<% if(type.substr(0,5) === 'image'){ %>
+  	<div id="thubnail>" class="nailthumb-container square-thumb">
+  		<a href='<%= urlpath %>' >
+	    <img src='/asset/render/img/<%= _id %>' data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" title="<%= slug%>" alt="<%= slug%>">
+    	</a>
+ 	</div>
+  	<% } else { %>
+  	<div><strong><%= type %></strong>: <%= slug%></div>
+  	<% } %>
+    <a href='#activos/<%= _id %>' >editar/versionar</a>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!--  ====================   SIDE-BAR ==========================  -->
+<div class="row">
+<div class="col-md-3">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Selectores</li>
+
+      <li class='nav-header'><button class='btn btn-default-block btn btn-default-link prjview'><%= utils.viewData.currentProject %></button></li>
+      <li><input type='hidden' placeholder='proyecto' disabled class='input-small' id='project[_id]' name='project[_id]' value=<%= project['_id'] %> ></li>
+    </ul>
+  </div><!--/.well side bar -->
+  
+  <div class="well sidebar-nav">
+    <div id='assets' class="accordion" id="accordion"></div>
+  </div><!--/.well side bar -->
+
+</div><!--/col-md-23side bar-->
+
+
+<!-- START Content  tabs -->
+<div class="col-md-9">
+  <div id="listcontent" class="content row"></div>    	      
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

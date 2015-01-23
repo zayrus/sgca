@@ -1,0 +1,74 @@
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Informe</label>
+    <div class="col-sm-5">
+      <p class="form-control-static"><strong><%= cnumber + ': ' + utils.fetchLabel(utils.tipoInformeOptionList, tipomov) %></strong></p>
+    </div>
+    <div class="col-sm-4">
+      <p class="form-control-static">id: <%= _id %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fereporte" class="col-sm-2 control-label" >Fecha </label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="fereporte" name="fereporte" type="text" class="form-control js-datepicker" 
+           value="<%= fereporte %>" placeholder="Fecha del informe">
+      </div>
+      <div class="input-group col-sm-5">
+        <span class="input-group-addon">@</span>
+          <input id="personsch" name="persona" type="text" class="form-control " 
+            value="<%= persona %>"  placeholder="Usuario responsable">
+        <span class="input-group-btn"><button class="btn btn-default js-personsch" type="button">Buscar</button></span>
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="slug" class="col-sm-2 control-label"  >Título</label>
+    <div class="col-sm-10">
+    <input id="slug" name="slug" type="text" class="form-control input-sm" 
+          value="<%= slug %>" >
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label"  >Descripción</label>
+    <div class="col-sm-10">
+    <textarea id="description" name="description" type="textarea" 
+      class="form-control input-sm" rows="3"><%= description %></textarea>
+      <span class="help-block"></span>
+     </div>
+  </div>
+  <div class="form-group">
+    <label for="fedesde" class="col-sm-2 control-label" >Rango fechas </label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="fedesde" name="fedesde" type="text" class="form-control js-datepicker" 
+           value="<%= fedesde %>" placeholder="Fecha desde">
+      </div>
+      <div class="col-sm-3">
+         <input id="fehasta" name="fehasta" type="text" class="form-control js-datepicker" 
+           value="<%= fehasta %>" placeholder="Fecha hasta">
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="tiporeporte" class="col-sm-2 control-label"  >Reporte</label>
+    <div class="col-sm-6">
+        <select class="form-control input-sm" id="tiporeporte" name="tiporeporte" value="<%= tiporeporte %>">
+            <%= utils.buildSelectOptions('tiporeporte',utils.tipoReporteOptionList, tiporeporte) %>
+        </select>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <button type="button" class="btn btn-primary js-submit" title="Guardar parámetros del informe" >Guardar</button>
+      <button type="button" class="btn btn-warning js-dbrefresh" title="Consulta la base de datos y regenera el informe" >Refrescar datos</button>
+      <button type="button" class="btn btn-info" title="Visualizar tabla de datos primarios" >Ver detalle</button>
+      <button type="button" class="btn btn-success js-report" title="Generar reporte" >Reporte</button>
+      <button type="button" class="btn btn-warning">Cancelar</button>
+    </div>
+  </div>

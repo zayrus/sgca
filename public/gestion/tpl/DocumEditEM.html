@@ -1,0 +1,60 @@
+  <div class="form-group">
+    <label for="slug" class="col-sm-2 control-label"  >Emisión</label>
+    <div class="col-sm-3">
+      <select class="form-control input-sm" id="tipoemis" name="tipoemis" value="<%= tipoemis %>">
+        <%= utils.buildSelectOptions('tipoemis',utils.tipoemisOptionList, tipoemis) %>
+      </select>
+    </div>
+    <div class="col-sm-7">
+      <input id="slug" name="slug" type="text" class="form-control input-sm" 
+          value="<%= slug %>" >
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="persona" class="col-sm-2 control-label"  >señal</label>
+    <div class="input-group col-sm-4">
+      <span class="input-group-addon">@</span>
+      <input id="personsch" name="persona" type="text" class="form-control" 
+          value="<%= persona %>"  placeholder="señal">
+      <span class="input-group-btn"><button class="btn btn-default js-personsch" type="button">Buscar</button></span>
+    </div>
+    <label for="product" class="col-sm-2 control-label"  >Paquete</label>
+    <div class="input-group col-sm-4">
+      <span class="input-group-addon">@</span>
+      <input id="product" name="product" type="text" class="form-control" 
+            value="<%= product %>"  placeholder="capitulo">
+      <span class="input-group-btn"><button class="btn btn-default js-productsch" type="button">Buscar</button></span>
+    </div>
+    <span class="help-block"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="estado_alta" class="col-sm-2 control-label"  >Fe semana</label>
+    <div class="col-sm-2">
+       <input id="fedesde" name="fedesde" type="text" class="form-control input-sm js-datepicker" 
+         value="<%= fedesde %>" placeholder="fecha desde dd/mm/aaaa">
+    </div>
+    <label for="cobertura" class="col-sm-2 control-label"  >Cobertura</label>
+    <div class="col-sm-3">
+      <select class="form-control input-sm" id="cobertura" name="cobertura" value="<%= cobertura %>">
+        <%= utils.buildSelectOptions('cobertura',utils.coberturaOptionList, cobertura) %>
+      </select>
+    </div>
+    <div class="col-sm-3">
+      <select class="form-control input-sm" id="fuente" name="fuente" value="<%= fuente %>">
+        <%= utils.buildSelectOptions('fuente',utils.fuenteOptionList, fuente) %>
+      </select>
+    </div>
+    <span class="help-block"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label"  >observaciones</label>
+    <div class="col-sm-10">
+    <textarea id="description" name="description" type="textarea" 
+      class="form-control input-sm" rows="2"><%= description %></textarea>
+      <span class="help-block"></span>
+     </div>
+  </div>
+  <hr>

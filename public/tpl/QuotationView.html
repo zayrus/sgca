@@ -1,0 +1,214 @@
+<div class="row">
+  <!-- form-QUOTATION   parent:  -->
+  <form class="form-horizontal col-md-12">
+    <fieldset>
+      <div class="row">
+        <div class="col-md-8">
+
+          <div class="form-group">
+          <!-- _id ; prj._id:  -->
+              <label for="quotationId" class="control-label">id:</label>
+
+              <div class="controls">
+                  <input id="quotationId" name="id" type="text" value="<%= _id === null ? '' : _id %>"
+                         disabled >
+                  <input id="project[id]" name="project[id]" type="text" 
+                          value="<%= project._id === null ? '' : project._id %>"  disabled>
+                  <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- slug   -->
+              <label for="nro" class="control-label">número / descr:</label>
+
+              <div class="controls">
+                <input type="text" class="input-large" id="nro" name="nro" 
+                    placeholder='número de solicitud' value="<%= nro %>"/>
+                <input type="text" class="input-large" id="slug" name="slug" placeholder="Descripción" 
+                     value="<%= slug %>" >
+                <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- nro, fesol, fenec, fesolstr, fenecstr   -->
+              <label for="nro" class="control-label">fechas:</label>
+
+              <div class="controls">
+                <input type="text" class="input-large" id="fesolstr" name="fesolstr" 
+                    placeholder='Fecha solicitud dd/mm/aaaa' value="<%= fesolstr %>"/>
+                <input type="text" class="input-large" id="fenecstr" name="fenecstr" 
+                    placeholder='Fecha necesidad dd/mm/aaaa' value="<%= fenecstr %>"/>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- solname; soldata   -->
+              <label for="solname" class="control-label">solicitante:</label>
+
+              <div class="controls">
+                  <input type="text" id="solname" placeholder='productor solicitante' 
+                      name="solname" value="<%= solname %>" >
+                  <input type="text" id="soldata" placeholder='datos de contacto' name="soldata" 
+                      value="<%= soldata %>" >
+                  <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- provname; provdata   -->
+              <label for="provname" class="control-label">proveedor:</label>
+
+              <div class="controls">
+                  <input type="text" id="provname" placeholder='proveedor' 
+                      name="provname" value="<%= provname %>" >
+                  <input type="text" id="provdata" placeholder='datos de contacto' name="provdata" 
+                      value="<%= provdata %>" >
+                  <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- rubro  nivel_importancia estado_alta nivel_ejecucion -->
+              <label for="rubro" class="control-label">datos:</label>
+              <div class="controls">
+                  <datalist id='rubroList'> 
+                      <option value='no_definido'    label='-tipo de evento-'>
+                      <option value='talentos'       label='talentos' >
+                      <option value='tecnica'        label='técnica' >
+                      <option value='infraestructura'  label='infraestructura' >
+                      <option value='seguridad'      label='seguridad'>
+                      <option value='hospitality'    label='hospitality' >
+                      <option value='transmision'    label='transmision'  >
+                      <option value='prensa'         label='prensa' >
+                  </datalist>
+                  <input type="text" class="input-large"  multiple list='rubroList' placeholder='rubro'
+                         id="rubro" name="rubro" value="<%= rubro %>" >
+
+                  <select class="input-large" id="nivel_importancia" name="nivel_importancia" value="<%= nivel_importancia %>">
+                      <option value='no_definido'
+                      <%= nivel_importancia == 'no_definido' ? 'selected':'' %>>--nivel relevancia--</option>
+                      <option value='bajo'
+                      <%= nivel_importancia == 'bajo' ? 'selected':'' %>>bajo</option>
+                      <option value='medio'
+                      <%= nivel_importancia == 'medio' ? 'selected':'' %>>medio</option>
+                      <option value='alto'
+                      <%= nivel_importancia == 'alto' ? 'selected':'' %>>alto</option>
+                      <option value='critico'
+                      <%= nivel_importancia == 'critico' ? 'selected':'' %>>critico</option>
+                   </select>
+
+                  <select class="input-large" id="estado_alta" name="estado_alta" 
+                      value="<%= estado_alta %>">
+                      <option value='activo'
+                      <%= estado_alta == 'activo' ? 'selected':'' %>>activo</option>
+                      <option value='suspendido'
+                      <%= estado_alta == 'suspendido' ? 'selected':'' %>>suspendido</option>
+                      <option value='cerrado'
+                      <%= estado_alta == 'cumplido' ? 'selected':'' %>>cumplido</option>
+                      <option value='rechazado'
+                      <%= estado_alta == 'rechazado' ? 'selected':'' %>>rechazado</option>
+                      <option value='baja'
+                      <%= estado_alta == 'baja' ? 'selected':'' %>>baja</option>
+                   </select>
+
+                  <select class="input-large" id="nivel_ejecucion" name="nivel_ejecucion" value="<%= nivel_ejecucion %>">
+                      <option value='no_definido' 
+                      <%= nivel_ejecucion == 'no_definido' ? 'selected':'' %> >-nivel ejecucion-</option>
+                    
+                      <option value='planificado' 
+                      <%= nivel_ejecucion == 'planificado' ? 'selected':'' %> >planificando...</option>
+                    
+                      <option value='solicitado' 
+                      <%= nivel_ejecucion == 'solicitado' ? 'selected':'' %> >solicitado</option>
+
+                      <option value='recibido'
+                      <%= nivel_ejecucion == 'recibido' ? 'selected':'' %> >recibido</option>
+                    
+                      <option value='compras' 
+                      <%= nivel_ejecucion == 'compras' ? 'selected':'' %> >en compras</option>
+                    
+                      <option value='adjudicado'
+                      <%= nivel_ejecucion == 'adjudicado' ? 'selected':'' %> >adjudicado</option>
+                    
+                      <option value='a_entregar' 
+                      <%= nivel_ejecucion == 'a_entregar' ? 'selected':'' %>>pend de entrega</option>
+                    
+                      <option value='entregado'
+                      <%= nivel_ejecucion == 'entregado' ? 'selected':'' %>>entregado</option>
+                    
+                      <option value='cumplido' 
+                      <%= nivel_ejecucion == 'cumplido' ? 'selected':'' %>>cumplido</option>
+
+                      <option value='rechazado' 
+                      <%= nivel_ejecucion == 'rechazado' ? 'selected':'' %>>rechazado</option>
+                   </select>
+                  <span class="help-inline"></span>
+              </div>
+          </div>
+
+         <div class="form-group">
+          <!-- gencond; -->
+              <label for="gencond" class="control-label">condiciones generales:</label>
+              <div class="controls">
+                  <textarea id="gencond" name="gencond" style="width: 90%;" 
+                  rows="2"><%= gencond %></textarea>
+              </div>
+          </div>
+ 
+         <div class="form-group">
+          <!-- partcond   -->
+              <label for="partcond" class="control-label">condiciones particulares:</label>
+              <div class="controls">
+                  <textarea id="partcond" name="partcond" style="width: 90%;" 
+                  rows="2"><%= partcond %></textarea>
+              </div>
+          </div>
+        </div><!--  main first col content span 8 -->
+
+        <div class="col-md-4"> <!--  main second col span 4 -->
+
+          <div class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+              <a href="#" class="btn btn-default btn btn-default-block btn btn-default-inverse clonar">Clonar requisitoria!</a>
+              <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-success browse">Navegar requisitorias</a>
+              <a href="#"  id='nodalquote' class="btn btn-default btn btn-default-block btn btn-default-primary"
+                  data-toggle='modal' data-target='#quoteViewer'>Asociar recursos</a>
+              <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-success vista">Vista</a>
+          </div>
+        </div><!--  sidebar right span 4 -->
+      </div><!--  end row  -->
+
+    </fieldset>
+    <div class="form-actions col-md-7">
+      <a href="#" class="btn btn-default btn btn-default-primary save">Guardar</a>
+      <a href="#" class="btn btn-default btn btn-default-danger delete">Eliminar</a>
+    </div>
+  </form>
+</div>
+
+<div class="row status-bar">
+    <div class="col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>INFO:</b> El registro se guardó exitosamente
+        </div>
+    </div>
+</div>
+
+<!--  ====================   MODAL VIEWER  ==========================  -->
+<div class="modal hide fade in" id="quoteViewer"  
+        data-keyboard=false data-backdrop=false tabindex="-1" 
+        role="dialog" aria-labelledby="articleViewerLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h3>Asociar requisitorias</h3>
+    </div>
+    
+    <div id="resourcecallback" class="modal-body">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default btn btn-default-large btn btn-default-primary"  data-dismiss="modal"  
+        aria-hidden="true">Cerrar</button>
+    </div>
+</div>
+<!--  ====================   MODAL VIEWER  ==========================  -->

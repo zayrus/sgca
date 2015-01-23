@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>MCN::MICA</title>
+	<link rel="shortcut icon" href="/img/favicon.png">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Modulo de Mercado de Industrias Culturales Argentinas">
+	<meta name="author" content="ciardi">
+
+	<meta name="geo.position" content="-34.60899163;-58.3702313817" />
+	<meta name="ICBM" content="-34.60899163;-58.3702313817" />
+	<meta name="DC.title" content="Ministerio de Cultura de la Nacion" />
+	<meta name="geo.country" content="AR" />
+	<meta name="geo.region" content="AR-C" />
+	<meta name="geo.placename" content="Buenos Aires, Ciudad Autónoma de Buenos Aires, República Argentina" />
+	<meta name="Language" content="Spanish" />
+	<meta name="Robots" content="all" />
+	<meta name="keywords" content="Ministerio de Cultura de la Nacion, MICA, Mercado de Industrias Culturales Argentinas" />
+
+<!-- Le styles -->
+	<link href="css/styles.css" rel="stylesheet" media='screen'>
+	<link href="css/backbone-forms-bootstrap.css" rel="stylesheet">
+	<link href="css/fuelux.min.css" rel="stylesheet" >
+	<link href="css/jquery-ui.min.css" rel="stylesheet" >
+	<link href="css/croppic.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet" >
+	<link href="css/bootstrap-tagsinput.css" rel="stylesheet">
+    <!---->
+	<script src="/css/andika.js"></script>
+	<script src="/css/arvo.js"></script>
+</head>
+
+<body>
+	<div id="header-region" class='header'></div>
+	<div id="dialog-region"></div>
+	<!-- Off Canvas
+	================================================== -->
+	<div id="main-region" ></div>
+
+	<div id="footer-region">
+		<section id="share">
+			<div>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.mica.gob.ar" data-text="MICA - Mercado de Industrias Culturales Argentinas" data-hashtags="mica2015">Tweet</a><br>
+				<div
+					class="fb-like"
+					data-share="true"
+					data-width="300"
+					data-show-faces="false">
+				</div>
+			</div>
+			<div>
+				<img src="http://www.cultura.gob.ar/static/img/logo-presidencia-de-la-nacion-footer.png" alt="Ministerio de Cultura de la Nacion" title="Ministerio de Cultura de la Nacion" width="250"  border="0">				
+			</div>
+		</section>
+		<div id="test-region" class="container"></div>
+	</div>
+<!-- /container -->
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="lib/jquery.min.js"></script>
+<script src="lib/underscore.js"></script>
+<script src="lib/backbone.js"></script>
+<script src="/lib/backbone.picky.min.js"></script> 
+<script src="lib/backbone.marionette.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/backbone-forms.min.js"></script>
+<script src="/lib/backbone.bootstrap-modal.js"></script>
+<script src="/lib/backbone-forms-bootstrap.js"></script>
+<!-- -->
+<script src="lib/fuelux.min.js"></script>    
+<script src="lib/jquery-ui.min.js"></script>
+<script src="lib/datepicker-es.js"></script>
+<script src="lib/TimeCircles.js"></script>
+<!--conexion con FB y TW-->
+<script src="lib/socialnetworks.js"></script>
+<!--Manipula imagenes del perfil-->
+<script src="lib/croppic/croppic.js"></script>
+<!--Manipula imagenes de la portada-->
+<script src="lib/imagesloaded.pkgd.min.js"></script>
+<script src="lib/masonry.pkgd.min.js"></script>
+	<!--Maneja los tagsinput-->
+<script src="lib/bootstrap-tagsinput.min.js"></script>
+<!-- -->
+<script src="/js/utils.js"></script>
+<script src="/js/dao.js"></script>
+<script src="/js/models/models.js"></script>
+	
+<!---->
+<script src="js/apps/config/marionette/regions/dialog.js"></script>
+<script src="js/app.js"></script>
+<script src="js/entities/common.js"></script>
+<script src="js/entities/header.js"></script>
+<script src="js/entities/comprobante.js"></script>
+<script src="js/entities/person.js"></script>
+<script src="js/entities/user.js"></script>
+<script src="js/entities/product.js"></script>
+<script src="js/entities/report.js"></script>
+<script src="js/entities/activity.js"></script>
+<script src="js/entities/sendmail.js"></script>
+
+<!---->
+<script src="js/apps/header/header_app.js"></script>
+<script src="js/apps/header/list/list_view.js"></script>
+<script src="js/apps/header/list/list_controller.js"></script>
+
+<script src="js/apps/documents/documents_app.js"></script>
+<script src="js/apps/documents/common/views.js"></script>
+<script src="js/apps/documents/list/list_view.js"></script>
+<script src="js/apps/documents/list/list_controller.js"></script>
+    
+<script src="js/apps/documents/edit/edit_view.js"></script>
+<script src="js/apps/documents/edit/edit_controller.js"></script>
+<script src="js/apps/documents/show/show_view.js"></script>
+<script src="js/apps/documents/show/show_controller.js"></script>
+<script src="js/apps/documents/report/report_edit_view.js"></script>
+<script src="js/apps/documents/report/report_edit_controller.js"></script>
+<!--Inscripciones-->
+<script src="js/apps/home/home_app.js"></script>
+<script src="js/apps/home/show/show_view.js"></script>
+<script src="js/apps/home/show/show_controller.js"></script>
+<script src="js/entities/home.js"></script>
+<script src="js/entities/features.js"></script>
+<script src="js/entities/gallery.js"></script>
+	
+<script src="js/main.js"></script>
+
+</body>
+</html>

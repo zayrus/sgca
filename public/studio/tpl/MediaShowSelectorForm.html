@@ -1,0 +1,26 @@
+<div class='panel-heading'>Assets</div>
+<div class='panel-body'>
+  <div class='row'>
+  <div class='col-sm-7'>
+    <p><%= currentasset.properties.properties['name'] %></p>
+    <p><%= currentasset.properties.properties['description'] %></p>
+    <p>Tipo: <%= currentasset.properties.properties['ppro:assetType'] %></p>
+
+  </div>
+  <div class='col-sm-5'>
+  <form class='form form-horizontal'>
+    <div class="form-group">
+      <label for="chapters" class="col-sm-2 control-label"  > assets:</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="prdassets" name="prdassets" >
+          <%= utils.buildSelectOptions('prdassets',assetsOptionList, currentasset['ea:assetId']) %>
+          </select>
+        </div>
+    </div>
+  </form>
+  <div>
+    <p>mas datos</p>
+  </div>
+  </div>
+  </div>
+</div>

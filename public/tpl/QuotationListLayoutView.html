@@ -1,0 +1,30 @@
+<!--  ====================   SIDE-BAR ==========================  -->
+<div class="row">
+<div class="col-md-2">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Selectores</li>
+      <li class='nav-header'><button class='btn btn-default-block btn btn-default-link prjview'><%= utils.viewData.currentProject %></button></li>
+      <li><input type='hidden' placeholder='proyecto' disabled class='input-small' id='project[_id]' name='project[_id]' value=<%= project['_id'] %> ></li>
+      <li><datalist id='ejecucionList'>
+            <option value='planificando' label='planificado'>
+            <option value='rfi' label='informacion'>
+            <option value='tdr' label='tdr'>
+            <option value='compras' label='compras' >
+            <option value='adjudicado' label='adjudicado'>
+            <option value='a_entregar' label='a entregar'>
+            <option value='entregado' label='entregado'>
+            <option value='cumplido' label='cumplido'>
+          </datalist>
+          <input type="text" class="input-small"  multiple list='ejecucionList' placeholder='nivel de ejecucion' id="nivel_ejecucion" name="nivel_ejecucion" value=<%= nivel_ejecucion %> ></li>
+      <li><button class='btn btn-default btn btn-default-block btn btn-default-inverse selreset'>reset</button></li>
+    </ul>
+  </div><!--/.well side bar -->
+</div><!--/col-md-3 side bar-->
+
+<!-- START Content  tabs -->
+<div class="col-md-10">
+  <div id="listcontent" class="content row"></div>    	      
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

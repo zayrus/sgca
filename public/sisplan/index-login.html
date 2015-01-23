@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://www.cultura.gob.ar/static/favicon.ico">
+    <title>MCN::Ministerio de Cultura - Presidencia de la Nación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles-as.css"  media="screen">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="login">
+    <div class="container">
+    	<div id="loginbox" style="margin-top:90px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-secondary" >
+                    <div class="panel-heading">
+                    	<a class="logo navbar-brand" href="http://www.cultura.gob.ar/"> <img src="http://www.cultura.gob.ar/static/img/logo-cultura-nacion.png" class="img-responsive text-center"></a>
+                        <div class="panel-title">Entrar</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Recuperar contraseña</a></div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form" action="/login" method="post">
+                                    
+                                    <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="usuario o email">
+                                    </div>
+                                
+									<div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
+                                    </div>
+                                    
+									<div class="input-group">
+                                      <div class="checkbox">
+                                        <label>
+                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Recordar datos
+                                        </label>
+                                      </div>
+                                    </div>
+
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls">
+                                        <button  id="btn-login" type="submit" class="btn btn-primary js-login-submit">
+                                            Entrar
+                                        </button>
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            ¿Aún no tenés cuenta? 
+
+                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Registrate
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+        <div id="signupbox" style="display:none; margin-top:90px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-secondary">
+                        <div class="panel-heading">
+                        <a class="logo navbar-brand" href="http://www.cultura.gob.ar/"> <img src="http://www.cultura.gob.ar/static/img/logo-cultura-nacion.png" class="img-responsive text-center"></a>
+                            <div class="panel-title">Registrate</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Entrar</a></div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form">
+                                
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="displayName" class="col-md-3 control-label">Nombre saludo</label>
+                                    <div class="col-md-9">
+                                        <input id='displayName' type="text" class="form-control" name="displayName" placeholder="Será usado como saludo">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="name" class="col-md-3 control-label">Nombre completo</label>
+                                    <div class="col-md-9">
+                                        <input id='name' type="text" class="form-control" name="name" placeholder="Ingresá tu nombre completo">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+ 
+                                <div class="form-group">
+                                    <label for="username" class="col-md-3 control-label">Correo electrónico</label>
+                                    <div class="col-md-9">
+                                        <input id='username' type="text" class="form-control" name="username" placeholder="Será tu identificación como usuario">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail" class="col-md-3 control-label">Reingrese su correo</label>
+                                    <div class="col-md-9">
+                                        <input id='mail' type="text" class="form-control" name="mail" placeholder="Será tu correo de contacto">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-md-3 control-label">Comentario</label>
+                                    <div class="col-md-9">
+                                        <input id='description' type="text" class="form-control" name="description" placeholder="Cuéntanos brevemente sobre ti">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="area" class="col-md-3 control-label">Área</label>
+                                    <div class="col-md-9">
+                                        <select id='area' type="text" class="form-control" name="area" placeholder="Dirección de la que depende su área" value="area" >
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Contraseña</label>
+                                    <div class="col-md-9">
+                                        <input id='password' type="password" class="form-control" name="password" placeholder="Tu contraseña debe tener al menos 6 caracteres">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwordcopia" class="col-md-3 control-label">Reingrese Contraseña</label>
+                                    <div class="col-md-9">
+                                        <input id='passwordcopia' type="password" class="form-control" name="passwordcopia" placeholder="Tu contraseña debe tener al menos 6 caracteres">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="termsofuse" class="control-label col-md-3">Acepta</label>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input id='termsofuse' type="checkbox" name='termsofuse' value='1' >Acepto condiciones de uso
+                                        </label>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+
+                                    
+                                <div class="form-group">
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="button" class="btn btn-info js-insertuser"><i class="icon-hand-right"></i> Registrate</button>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                            </form>
+                         </div>
+                    </div>
+	</div> 
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="/lib/underscore-min.js"></script>
+<script src="/lib/backbone-min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+
+<script src="/js/utils.js"></script>
+<script src="/js/dao.js"></script>
+<script src="/js/models/models.js"></script>
+
+<script src="js/mainlogin.js"></script>
+
+</body>
+</html>

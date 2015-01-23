@@ -1,0 +1,11 @@
+<!--article id="sidebar-region" role="navigation" class="sistema-box" -->
+<h4>Solicitud Nro: <%= cnumber %></h4>  
+<div class="content-body">
+  <div class="req-row">Estado<span class="label label-<%= utils.fetchClass(utils.documexecutionOptionList, nivel_ejecucion) %>"><%= utils.fetchLabel(utils.documexecutionOptionList, nivel_ejecucion) %>
+  </span></div>
+  <div class="req-row">Fecha solicitud<span class="label label-default"><%= fecomp %>
+  </span></div><hr>
+
+  <h3><%= slug %></h3>
+  <p><%= description %></p>
+</div>

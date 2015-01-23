@@ -1,0 +1,43 @@
+<li>
+	<h3>Filtros</h3>
+</li>
+<li>
+	<div class="input-group">
+		<span class="input-group-addon"><input type="checkbox" name='nodoopt' value='nodoopt' checked='checked'></span>
+	  <select class="form-control" id="nodo" name="nodo">
+	    <%= utils.buildSelectOptions('nodo',dao.gestionUser.fetchPermitted('NODO','sisplan'), nodo) %>
+	  </select>
+	</div>
+</li>
+<li>
+	<div class="input-group">
+		<span class="input-group-addon"><input type="checkbox" name='areaopt' value='areaopt' checked='checked'></span>
+	  <select class="form-control" id="area" name="area">
+	    <%= utils.buildSelectOptions('area',dao.gestionUser.fetchPermitted('AREA','sisplan'), area) %>
+	  </select>
+	</div>
+</li>
+<li>
+	<div class="input-group">
+		<span class="input-group-addon"><input type="checkbox" name='tregistroopt' value='tregistroopt' checked='checked'></span>
+	  <select class="form-control" id="tregistro" name="tregistro">
+	    <%= utils.buildSelectOptions('tregistro',utils.tipoActionEntityList, tregistro) %>
+	  </select>
+	</div>
+</li>
+<li>
+	<div class="input-group">
+		<span class="input-group-addon"><input type="checkbox" name='taccionopt' value='taccionopt' checked='checked'></span>
+	  <select class="form-control" id="taccion" name="taccion">
+	    <%= utils.buildSelectOptions('taccion',utils.tipoActionIniciativeList, taccion) %>
+	  </select>
+	</div>
+</li>
+<li>
+	<div class="input-group">
+		<span class="input-group-addon"><input type="checkbox" name='tgastoopt' value='tgastoopt' checked='checked'></span>
+	  <select class="form-control" id="tgasto" name="tgasto">
+	    <%= utils.buildSelectOptions('tgasto',utils.tipoBudgetMovimList, tgasto) %>
+	  </select>
+	</div>
+</li>

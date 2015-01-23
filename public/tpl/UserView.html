@@ -1,0 +1,158 @@
+
+<div class="row">
+<%= console.log(this.model) %>
+  <div class="navbar " style="z-index: 10;">
+      <div class="navbar-inner">
+          <div class="container">
+
+              <a class="btn btn-default navbar-btn btn-default" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar">1</span>
+                  <span class="icon-bar">2</span>
+                  <span class="icon-bar">3</span>
+              </a>
+
+              <a class="navbar-brand" href="#navegar/personas">Edición de Usuarios</a>
+              
+              <div class="navbar-collapse collapse">
+
+                  <ul class="nav">
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuevo<b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#personas/add">Persona</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+
+                  <ul class="nav pull-right">
+                    <li><a class='contacto' >Agregar contacto</a></li>
+                    <li><a class='usuario' >Agregar usuario</a></li>
+                    <li><a href="#" class='browse' >Navegar Personas</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vista<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class='vistacarousel' >Vista carousel</a></li>
+                            <li><a href="#" class='vistainfo'  >Vista info</a></li>
+                        </ul>
+                    </li>
+                  </ul>
+              </div>
+              <!--/.navbar-collapse -->
+          </div>
+      </div>
+  </div>
+
+
+  <!-- form-PRODUCT   parent:  -->
+      <div class="row">
+        <div class="col-md-8">
+        <form class="form-horizontal col-md-12 core">
+          <fieldset>
+          <div class="form-group">
+              <label for="personId" class="control-label">id:</label>
+
+              <div class="controls">
+                  <input id="personId" name="id" type="text" value="<%= _id === null ? '' : _id %>"
+                         disabled >
+      
+                  <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- slug  / denom -->
+              <label for="nickName" class="control-label">nombres:</label>
+
+              <div class="controls">
+
+                <input type="text" class="input-large" id="nickName" name="nickName" 
+                    placeholder='id persona' value=""/>
+             
+                <input type="text" class="input-large" id="name" name="name" placeholder="nombre/razon social" 
+                     value="" >
+             
+                <input type="text" class="input-large" id="displayName" name="displayName" 
+                     placeholder="nic o avatar" value="" >
+             
+                <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- rubro  nivel_importancia estado_alta nivel_ejecucion -->
+              <label for="estado_alta" class="control-label">estados:</label>
+              <div class="controls">
+
+                <span class="help-inline"></span>
+              </div>
+          </div>
+         
+   
+        </fieldset>
+        </form>
+
+        <form class="form-horizontal col-md-12 facets">
+        <fieldset>
+
+          <div class="accordion" id="accordion1">
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle branding" data-toggle="collapse"  href="#collapseBrnd">Alta de material para branding</a>
+              </div>
+              <div id="collapseBrnd" class="accordion-body collapse">
+                <div class="accordion-inner brandinghook"></div>
+                <div id='brndloaded' class='col-md-offset-2'></div>
+                <svg id='brnddrop' class='svgcontainer' width=700 height=160 >
+                     <rect x="2" y="5" rx="20" ry="20" width="680" height="150"
+                        style="fill:blue;stroke:black;stroke-width:3;fill-opacity:0.1;stroke-opacity:0.3"/>
+
+                    <text x=200   y=50   font-size=15 fill=3 fill-opacity=.5 font-family='Arvo' >arrastre y suelte los archivos aqui</text>
+                </svg>
+                <div class='col-md-offset-1'>
+                  <div class="brnddropped"></div> 
+                </div>
+                <div class="progress">
+                    <div id='brndprogressbar' class="bar" style="width: 0%;">progress</div>
+                </div> 
+                <div class="form-actions">
+                  <a href="#" class="btn btn-default btn btn-default-info    uploadbrnd">Subir contenido</a>
+                  <a href="#" class="btn btn-default btn btn-default-warning discardbrnd">Descartar contenido</a>
+                  <a href="#" class="btn btn-default btn btn-default-primary addnewbrnd">Alta nuevo branding</a>
+                  <a href="#" class="btn btn-default btn btn-default-warning cancelbrnd">Cancelar</a>
+                </div>
+              </div>
+            </div>
+
+          </div><!--   ends accordio1 -->
+          <div class="accordion" id="brandingaccordion"></div>
+
+        </fieldset>
+
+          <div class="form-actions ">
+            <a href="#" class="btn btn-default btn btn-default-primary save">Guardar</a>
+            <a href="#" class="btn btn-default btn btn-default-danger delete">Eliminar</a>
+            <a href="#" class="btn btn-default btn btn-default-warning clonar">Clonar</a>
+          </div>
+          <div class="row status-bar">
+              <div class="col-md-12">
+                  <div class="alert alert-success" style="display: none">
+                      <b>INFO:</b> El registro se guardó exitosamente
+                  </div>
+              </div>
+          </div>
+
+        </form>
+   <div>
+  </div><!--/.well side bar -->
+
+
+      </div><!--  main first col content span 8 -->
+
+
+    
+ 
+      </div><!--  end master row  -->
+  
+</div>

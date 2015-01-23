@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejemplo OpenStreetMap Miriam y Agustin</title>
+</head>
+<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<script>  
+  var map;
+  function crearMapa() {
+  if (document.getElementById('basicMap').innerHTML == ""){
+    // Creamo el mapa
+    map = new OpenLayers.Map("basicMap");
+    // Creación de la capa que muestra el mapa de openstreetmap
+    var mapnik = new OpenLayers.Layer.OSM();
+    // Añadir la capa al mapa
+    map.addLayer(mapnik);	
+    //centramos el mapa
+    map.setCenter(new OpenLayers.LonLat(-58.39688441711421,-34.60834737727606)
+      .transform(
+        new OpenLayers.Projection("EPSG:4326"), // de WGS 1984
+        new OpenLayers.Projection("EPSG:900913") // a Proyección Esférica Mercator
+      ), 13 // Nivel de zum
+    );
+  }else{
+    alert("¡El mapa ya fue creado");
+  }
+  }
+  function mostrarPopup() {
+    map.addPopup(new  OpenLayers.Popup.FramedCloud(
+							  "El Obelisco",
+                             new OpenLayers.LonLat(-58.38158509689364,-34.603755438417785)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // de WGS 1984
+            new OpenLayers.Projection("EPSG:900913")),
+          null,
+          "<img src=\"http://www.imanesya.com.ar/openstreetmap/obelisco.gif?resize=200%2C200\" alt=\"Obelisco\" />",
+          null,
+          true
+    ));
+  }
+
+
+
+    function mostrarPopupA() {
+    map.addPopup(new  OpenLayers.Popup.FramedCloud(
+							  "Agustin",
+                             //new OpenLayers.LonLat(-58.40534946876434,-34.597017191566344)
+                             new OpenLayers.LonLat(-58.45105059999999,-34.5919216)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // de WGS 1984
+            new OpenLayers.Projection("EPSG:900913")),
+          null,
+          "<img src=\"http://www.imanesya.com.ar/openstreetmap/00.jpg?\" alt=\"Agustin Taleff\" />",
+          null,
+          true
+    ));
+  }
+      function mostrarPopupCdF() {
+    map.addPopup(new  OpenLayers.Popup.FramedCloud(
+							  "Monumental",
+                             new OpenLayers.LonLat(-58.449713205870886,-34.54530968446245)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // de WGS 1984
+            new OpenLayers.Projection("EPSG:900913")),
+          null,
+          "<img src=\"http://www.imanesya.com.ar/openstreetmap/estadio-monumental.jpg?\" alt=\"Monumental\" />",
+          null,
+          true
+    ));
+  }
+  
+        function mostrarPopupM() {
+    map.addPopup(new  OpenLayers.Popup.FramedCloud(
+							  "Miriam",
+                             new OpenLayers.LonLat(-58.450425332359664,-34.61062507603393)
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // de WGS 1984
+            new OpenLayers.Projection("EPSG:900913")),
+          null,
+          "<img src=\"http://www.imanesya.com.ar/openstreetmap/PC020338.jpg?\" alt=\"Miriam\" />",
+          null,
+          true
+    ));
+  }
+  
+ 
+  
+</script>
+<button onclick="mostrarPopup();"> Mostrar el Obelisco </button>
+<button onclick="mostrarPopupM();"> Miriam </button> 
+<button onclick="mostrarPopupA();"> Agustin </button>
+<button onclick="mostrarPopupCdF();"> La cuna del Futbol </button>  
+<div style="width: 800px;height: 600px;margin: 0;" id="basicMap"></div>
+<body onload="crearMapa()">
+</body>
+</html>

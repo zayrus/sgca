@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MCN::media</title>
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="modulo de gestion">
+    <meta name="author" content="ciardi">
+
+    <meta name="geo.position" content="-34.60899163;-58.3702313817" />
+    <meta name="ICBM" content="-34.60899163;-58.3702313817" />
+    <meta name="DC.title" content="Ministerio de Planificación Federal Inversión Pública y Servicios" />
+    <meta name="geo.country" content="AR" />
+    <meta name="geo.region" content="AR-C" />
+    <meta name="geo.placename" content="Buenos Aires, Ciudad Autónoma de Buenos Aires, República Argentina" />
+    <meta name="Language" content="Spanish" />
+    <meta name="Robots" content="all" />
+    <meta name="description" content="Módulo de gestió del BACUA" />
+    <meta name="keywords" content="Ministerio de Planificación Federal Inversión Pública y Servicios, MinPlan, Ministerio de Planificación, Subsecretaría de Coordinación y Control de Gestión, Renuncia Voluntaria al Subsidio del Estado Nacional, Nomina adherentes, Subsidios," />
+
+    <!-- Le styles -->
+    <link href="css/theme.css" rel="stylesheet" media='screen'>
+    <!-- link href="css/bootstrap-theme.min.css" rel="stylesheet" media='screen'  -->
+    <link href="css/backbone-forms-bootstrap.css" rel="stylesheet">
+    <link href="/css/datepicker.css" rel="stylesheet">
+
+    <!-- link href="css/offcanvas.css" rel="stylesheet" media='screen' -->
+    <style type="text/css">
+
+
+    /*
+        <link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet" media='screen'>
+        <link href="css/jquery-ui-1.10.3.theme.css" rel="stylesheet" media='screen'>
+        [class*="col-"] {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          background-color: #eee;
+          border: 1px solid #ddd;
+          background-color: rgba(86,61,124,.15);
+          border: 1px solid rgba(86,61,124,.2);
+        }
+    */
+        table.hours { table-layout: fixed; }
+        table.hours th, table td { overflow: hidden; }
+
+    </style>
+    <!--link href="css/backbone-forms-bootstrap.css" rel="stylesheet" -->
+    <script src="/css/andika.js"></script>
+    <script src="/css/arvo.js"></script>
+
+    <!-- script src="http://use.edgefonts.net/andika.js"></script -->
+    <!-- script src="http://use.edgefonts.net/arvo.js"></script -->
+ 
+</head>
+
+<body>
+    <section class='container'>
+    <div id="header-region"></div>
+    <div id="dialog-region"></div>
+
+
+    <!-- Off Canvas
+    ================================================== -->
+
+    <div id="main-region"></div><!--/container -->
+
+
+    <div id="footer-region">
+    <hr>
+    <footer class="footer">
+        <table class='table' style='background:#cce'>
+            <tr>
+                <td><a href="http://www.presidencia.gov.ar/" target="_blank" title="Presidencia de la Nación Argentina"  ><img src="http://www.igualdadcultural.gob.ar/images/layout/brochette/presidencia.png;pv14dee9fdfa3227a8" alt="Logo, Presidencia de la Nación Argentina" /></a></td>
+
+                <td><a href="http://www.medios.gov.ar/" target="_blank" title="Secretaría de Comunicación Púbtdca, Jefatura de Gabinete de Ministros"  class="newWindow"><img src="http://img1.igualdadcultural.gob.ar/images/layout/brochette/medios.png;pv2e968617238deb01" alt="Logo, Secretaría de Comunicación Púbtdca Jefatura de Gabinete de Ministdos" /></a></td>
+
+                <td><a href="http://www.minplan.gov.ar/" target="_blank" title="Ministerio de planificación Federal, Inversión Púbtdca y Servicios"  class="newWindow"><img src="http://img1.igualdadcultural.gob.ar/images/layout/brochette/minplan.png;pv0a8cafc4c0805eda" alt="Logo, Ministerio de planificación Federal, Inversión Púbtdca y Servicios" /></a></td>
+
+                <td><a href="http://www.bacua.gov.ar/" target="_blank" title="Banco Audiovisual de Contenidos Universales Argentino"  class="newWindow"><img src="http://www.igualdadcultural.gob.ar/images/layout/brochette/bacua.png;pv927fbe8e8497ff13" alt="Logo, Banco Audiovisual de Contenidos Universales Argentino" /></a></td>
+
+                <td><a href="http://cda.gob.ar/" target="_blank" title="CDA - Contenidos Digitales Abiertos"   class="newWindow"><img src="http://www.igualdadcultural.gob.ar/images/layout/brochette/cda.png;pv001f1797f007a50c" alt="Logo, Contenidos Digitales Abiertos" /></a></td>
+            </tr>
+        </table>
+    </footer>
+    </div>
+    </section>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="lib/jquery.min.js"></script>
+<script src="/lib/underscore-min.js"></script>
+<script src="/lib/backbone-min.js"></script>
+<script src="/lib/backbone.picky.min.js"></script>
+<!-- script src="lib/backbone.syphon.js"></script -->
+
+<script src="/lib/backbone.marionette.min.js"></script>
+
+<!-- script src="lib/jquery-ui.min.js"></script -->
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/backbone-forms.min.js"></script>
+<script src="lib/list.min.js"></script>
+<script src="lib/backbone.bootstrap-modal.js"></script>
+<script src="lib/backbone-forms-bootstrap.js"></script>
+<script src="/lib/bootstrap-datepicker.js"></script>
+
+<script src="jwplayer/jwplayer.js"></script>
+
+<script src="/js/utils.js"></script>
+<script src="/js/dao.js"></script>
+
+<script src="js/apps/config/marionette/regions/dialog.js"></script>
+<script src="js/app.js"></script>
+
+<script src="js/entities/common.js"></script>
+<script src="js/entities/header.js"></script>
+<script src="js/entities/comprobante.js"></script>
+<script src="js/entities/person.js"></script>
+<script src="js/entities/user.js"></script>
+<script src="js/entities/product.js"></script>
+<script src="js/entities/activity.js"></script>
+
+<script src="js/apps/header/header_app.js"></script>
+<script src="js/apps/header/list/list_view.js"></script>
+<script src="js/apps/header/list/list_controller.js"></script>
+
+<script src="js/apps/media/media_app.js"></script>
+<script src="js/apps/media/common/views.js"></script>
+<script src="js/apps/media/show/show_view.js"></script>
+<script src="js/apps/media/show/show_controller.js"></script>
+
+<script src="js/main.js"></script>
+
+
+</body>
+</html>

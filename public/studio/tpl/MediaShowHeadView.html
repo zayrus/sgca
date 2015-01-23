@@ -1,0 +1,26 @@
+<div class='panel-heading'>
+	<%= properties.properties.name %>
+</div>
+<div class='panel-body'>
+	<div class="col-xs-6 col-sm-6">
+	  <%= properties.properties.description %>
+	  <br/>id: [<%= ea_productionId %>]
+	  <br>comit: [<%= ea_commitId %>]
+	  <br>session: [<%= currentsessionId ? currentsessionId: 'No hay' %>]
+	</div>
+	<div class='col-sm-6'>
+	 	<form class='form form-horizontal'>
+	    <div class="form-group">
+	     	<label for="chapters" class="col-sm-2 control-label"  > Commits:</label>
+	       	<div class="col-sm-10">
+	         	<select class="form-control" id="prdcommits" name="prdcommits" >
+	         	<%= utils.buildSelectOptions('prdcommits',commitsOptionList, '') %>
+	         	</select>
+	 			TAG:<%= properties['ea:etag'] %>
+	       	</div>
+	 	</div>
+		</form>
+	</div>
+</div>
+
+<!-- button type="submit" class="btn btn-default">Sign in</button -->

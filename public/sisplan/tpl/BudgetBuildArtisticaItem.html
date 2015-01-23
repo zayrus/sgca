@@ -1,0 +1,9 @@
+	<td><input class='js-row-chbx' name='rowchbx' type='checkbox'></td>
+	<td><button class='btn-link js-edit'  title='editar'><span class='glyphicon glyphicon-edit'></span></button><button class='btn-link js-clone' title='clonar item' ><span class='glyphicon glyphicon-plus-sign'></span></button></td>
+	<td><strong><%= utils.fetchLabel(utils.budgetTemplate[tgasto], sgasto) %></strong><%= (slug ? ": "+slug : "") %></td>
+	<td><button class='btn-link js-isactive'  title='registro activo?'><span class='glyphicon <%= isactive ? "glyphicon-ok-circle" : "glyphicon-ban-circle" %>'></span></button></td>
+	<td><input class='form-control' id='cantidad' name='cantidad' value='<%= cantidad %>'></td>
+	<td><%= utils.fetchLabel(utils.umeList, ume) %><strong><%= (freq != "1" ? " x " + freq + " " + utils.fetchLabel(utils.umeFreqList, umefreq): "") %></strong></td>
+	<td><input class='form-control' id='punit' name='punit' value='<%= punit %>'></td>
+	<td><span class="pull-right"><%= accounting.formatNumber(importe) %></span></td>
+	<td><button class='btn-link js-trash'  title='eliminar'><span class='glyphicon glyphicon-trash'></span></button></td>

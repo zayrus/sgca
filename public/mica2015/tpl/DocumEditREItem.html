@@ -1,0 +1,25 @@
+  <div class="form-group">
+    <label for="slug" class="col-sm-2 control-label"  >Capitulo / unitario</label>
+    <div class="input-group col-sm-4">
+      <span class="input-group-addon">@</span>
+      <input id="product" name="product" type="text" class="form-control" 
+            value="<%= product %>"  placeholder="capitulo">
+      <span class="input-group-btn"><button class="btn btn-default js-productsch" type="button">Buscar</button></span>
+    </div>
+    <div class="col-sm-6">
+      <p class="form-control-static"><strong>Dur: <%= durnominal %> - </strong><%= pslug %></p>
+    </div>
+ 
+    <div class="col-sm-8 col-sm-offset-2">
+        <input id="comentario" name="comentario" type="text" class="form-control" 
+            value="<%= comentario %>" placeholder="comentario" >
+    </div>
+    <span class="help-block"></span>
+  </div>
+  <div class="form-group">
+    <label for="estado_alta" class="col-sm-2 control-label"  ></label>
+    <div class="col-sm-4 col-sm-offset-9">
+      <button type="button" class="btn btn-link form-control-static js-sitremove">Eliminar este item: 
+        <span class="glyphicon glyphicon-remove-circle"></span></button>
+    </div>
+  </div>

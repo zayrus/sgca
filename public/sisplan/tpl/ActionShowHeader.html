@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<h4>Descripción:</h4>
+		<p><%= description %></p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<h4>Objetivos:</h4>
+		<p><%= objetivo %></p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<h4>Metas físicas:</h4>
+		<p><strong>Productos / resultados: <%= metafisica %></strong>   <%= metafisicaume %>   </p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-12" >
+		<table class="table table-condensed table-bordered">
+			<thead>
+				<tr>
+					<th>Nodo</th>
+					<th>Area</th>
+					<th>Fecha Prevista</th>
+					<th>Estado</th>
+					<th>Ejecución</th>
+					<th>Contraparte</th>
+					<th>Descriptores</th>
+				</tr> 
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= nodo %></td>
+					<td><%= area %></td>
+					<td><%= feaccion %></td>
+					<td><%= utils.fetchLabel(utils.actionAltaOptionList, estado_alta) %></td>
+					<td><%= utils.fetchLabel(utils.actionEjecucionOptionList, nivel_ejecucion) %></td>
+					<td><%= contraparte %></td>
+					<td><%= descriptores %></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

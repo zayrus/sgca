@@ -1,0 +1,262 @@
+<div class="fuelux">
+  <section class="page-view">
+    <div role="main">
+      <div class="row margin-section">
+
+        <div class="col-xs-12 col-md-12" id="heading">
+          <h4>Solicitud de articulación con el Ministerio de Cultura para el desarrollo de eventos culturales</h4>
+          <p>Esta sección está destinada exclusivamente a Municipios u Organismos Públicos que quieran solicitar la participación o asistencia del Ministerio de Cultura para potenciar el desarrollo de algún evento o proyecto cultural a cargo de dicha jurisdicción. Se trata de acompañar iniciativas tales como fiestas populares, regionales o nacionales contribuyendo con la provisión de recursos artísticos, técnicos u operativos. </p>
+          <p>Para tal fin, se requiere completar esta solicitud, organizada en cuatro pasos, claramente indicados debajo. Para avanzar o retroceder de un paso al siguiente utilice las flechas que se encuentran sobre la derecha. </p>
+        </div>
+          
+        <div class="form col-xs-12 col-md-12">
+          <!--BEG FORM-->
+          <div class="fu-example section">
+            <div class="wizard" data-initialize="wizard" id="myWizard">
+              <ul class="steps" style="margin-left: 0">
+                <li data-step="1" class="active"><span class="badge badge-info">1</span>Evento<span class="chevron"></span></li>
+                <li data-step="2"><span class="badge">2</span>Responsables<span class="chevron"></span></li>
+                <li data-step="3"><span class="badge">3</span>Requerimientos<span class="chevron"></span></li>
+                <li data-step="4"><span class="badge">4</span>Confirmación<span class="chevron"></span></li>
+              </ul>
+              <div class="actions">
+                <button class="btn btn-default btn-prev" disabled="disabled"><span class="glyphicon glyphicon-arrow-left"></span></button>
+                <button class="btn btn-default btn-next" data-last="Guardar"><span class="glyphicon glyphicon-arrow-right"></span></button>
+              </div>
+
+              <div class="step-content">
+
+                <div class="step-pane active" data-step="1">
+
+                  <h4>Descripción del evento cultural</h4>
+                  <p>¡Bienvenido! En este primer paso lo invitamos a <strong>describir el evento o proyecto cultural</strong> para el que se quiere solicitar la participación del Ministerio de Cultura. Se asume que se trata de un evento significativo para su jurisdicción.</p>
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <label class="control-label">Denominación del evento</label>
+                        <input type="text" class="form-control" name="slug" value='<%= slug %>'>
+                      </div>
+                      <div class="col-sm-4 selectContainer">
+                        <label class="control-label">Tipo de evento</label>
+                        <select class="form-control" name="tipo_evento">
+                          <%= utils.buildSelectOptions('proevento',utils.tipofiestaOptionList, tipo_evento) %>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-4 selectContainer">
+                        <label class="control-label">Provincia</label>
+                        <select class="form-control" id="proevento" name="provevento">
+                          <%= utils.buildSelectOptions('proevento',utils.provinciasOptionList.Argentina, provevento) %>
+                        </select>
+                      </div>    
+                      <div class="col-sm-6">
+                          <label class="control-label">Localidad</label>
+                          <input type="text" class="form-control" id="locevento" name="locevento" 
+                                  value="<%= locevento %>" >
+                      </div>
+            
+                      <div class="col-sm-2">
+                          <label class="control-label">CP</label>
+                          <input type="text" class="form-control" name="cpevento"
+                                  value="<%= cpevento %>"  >
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label class="control-label">Descripción del evento</label>
+                      <textarea class="form-control" name="devento" rows="10"><%= devento %></textarea>
+                  </div>
+                
+                  <div class="row col-sm-12">
+                    <div class="form-group well-transparent bg-info col-sm-6">
+                      <div class="row">
+                        <div class='col-sm-12'>
+                          <label class="control-label">Fecha y hora del evento</label>
+                          <div class='input-group'>
+                            <input type='text' class="form-control js-datepicker" id='fevento' name="fevento" 
+                                    value="<%= fevento %>" >
+                            <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class='col-sm-12'>
+                          <label class="control-label">Texto descriptivo de la fecha y horario seleccionada</label>
+                          <textarea class="form-control" name="leyendafecha" rows="4"><%= leyendafecha %></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-sm-5 col-sm-push-1">
+                      <div class="row">
+                        <label class="control-label">Lugar donde se realizará el evento
+                        </label>
+                        <textarea class="form-control" name="lugar" rows="4"
+                        value="<%= lugar %>"><%= lugar %>
+                        </textarea>
+                      </div>
+                    </div>
+                    <div class="form-group col-sm-5 col-sm-push-1">
+                      <div class="row">
+                        <label class="control-label">¿El evento es al aire libre?</label>
+                        <input type="checkbox" name="airelibre" id="airelibre" checked>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- END EVENTO --> 
+                
+                <div class="step-pane" data-step="2">
+                  
+                  <h4>Municipio u Organismo Público solicitante - Datos de contacto</h4>
+                  <p>Esta solicitud sólo puede ser cursada por un Municipio u Organismo Público. En este segundo paso le requerimos que seleccione el nombre de dicho Municipio u Organismo. Asimismo le requerimos los datos de contacto de los responsables nominados para la prosecución de la tramitación. </p>
+                  <hr>
+                  <h4>Municipio u Organismo Público</h4>
+                  <p>Seleccione el Municipio u Organismo con el botón 'Buscar'</p>
+                  <div class="form-group row">
+                    <div class="col-sm-8">
+                      <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input id="organismosch" name="organismo" type="text" class="form-control " 
+                            value="<%= organismo %>"  placeholder="Seleccione un organismo con el boton buscar" readonly>
+                        <span class="input-group-btn"><button class="btn btn-default js-organismosch" type="button">Buscar</button></span>
+                      </div> 
+                    </div> 
+                  </div>
+                  <hr>
+                  <h4>Datos del contacto</h4>
+                  <p>Indicar aquí el nombre y cargo de la persona responsable del seguimiento operativo de esta solicitud. La dirección de correo electónico que se indique a continuación será <strong>utilizada para toda comunicación oficial con relación a esta solicitud</strong> y también será la clave de usuario par el acceso a la Intranet del Ministerio de Cultura</p>
+                  <div class="form-group row">
+                    <div class="col-sm-8">
+                      <label class="control-label">Correo electrónico principal</label>
+                      <input type="email" id='eusuario' class="form-control" id="eusuario" name="eusuario" value="<%=eusuario %>" placeholder="dirección de correo electrónica">
+                      <span class="help-block"></span>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-8">
+                      <label class="control-label">Nombre y apellido del contacto principal</label>
+                      <input type="text" class="form-control" id="nusuario" name="nusuario" value="<%=nusuario %>" placeholder="Nombre y apellido">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-8">
+                      <label class="control-label">Cargo o rol</label>
+                      <input type="text" class="form-control" id="cargo" name:'rolusuario' value="<%=rolusuario %>" placeholder="Cargo o rol que ocupa en esta solicitud">
+                    </div>
+                  </div>
+
+                  <h4>Responsable Político</h4>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label class="control-label">Nombre y apellido</label>
+                        <input type="text" class="form-control" name="nsolicitante"  value="<%= nsolicitante %>" >
+                      </div>
+                      <div class="col-sm-4">
+                          <label class="control-label">Email</label>
+                          <input type="email" class="form-control" name="esolicitante" value="<%= esolicitante %>"placeholder="Email">
+                      </div>             
+                      <div class="col-sm-4">
+                        <label class="control-label">Teléfono</label>
+                        <input type="text" class="form-control" name="tsolicitante" value="<%= tsolicitante %>">
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <h4>Responsable Técnico</h4>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label class="control-label">Nombre y apellido</label>
+                        <input type="text" class="form-control" name="ntecnico" value="<%= ntecnico %>" >
+                      </div>              
+                      <div class="col-sm-4">
+                        <label class="control-label">Email</label>
+                        <input type="email" class="form-control" name="etecnico" value="<%= etecnico %>" placeholder="Email">
+                      </div>              
+                      <div class="col-sm-4">
+                        <label class="control-label">Teléfono</label>
+                        <input type="text" class="form-control" name="ttecnico" value="<%= ttecnico %>" >
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- END RESPONSABLES -->
+  
+                <div class="step-pane" data-step="3">
+                  <h4>Requerimientos</h4>
+                  <p class="bg-info well-transparent row">A fin de establecer una articulación plurilateral, deberán ser indicados tanto los requerimientos solicitados al Ministerio de Cultura de la Nación, como aquellos que el Municipio u Organismo compromete a su propio cargo.</p>
+              
+                  <div class="form-group">
+                    <label class="control-label">Descripción ejecutiva de la solicitud</label>
+
+                    <p>Indique en forma resumida el alcance del requerimiento</p>
+                    <textarea class="form-control" name="description" rows="4" placeholder="Descripción ejecutiva de la solicitud. Justificación" value='<%= description %>'><%= description %></textarea>
+                  </div>
+
+                  <a id="nuevo-req-btn">
+                    <button id="itemFormBtn" type="button" class="btn btn-primary">Pulse aquí para agregar un requerimiento
+                    </button></a>
+                  
+                  <!--NUEVO REQ-->
+                  <div id="nuevo-req-form" class="col-xs-12 col-md-12 sistema-box"></div>
+                  <!--END NUEVO REQ-->
+                  
+                  <!--BEG TABLA DE REQUERIMIENTOS-->
+                  <div id='soldetails-region' class="col-xs-12 col-md-12 sistema-box row spacer"></div>
+                  
+                </div><!-- END REQUERIMIENTOS -->
+                
+                <div class="step-pane" data-step="4">
+                  <h4>SOLICITUD TÉCNICO ARTÍSTICA</h4>
+                  <div class="bg-danger well-transparent row" id="requisite">
+                    <p>Verifique que los datos que se listan a continuación sean correctos. Al hacer click en <strong>GUARDAR</strong> se iniciará el trámite de Solicitud Técnico-Artística y el mismo será evaluado y procesado por el Ministerio de Cultura de la Nación.</p><p>Los requerimientos podrán ser aprobados o rechazados en su totalidad o en parte. </p><p>En su <a href="/forms/">Panel de Gestión</a> encontrará ésta solicitud y su historial de requerimientos para continuar siendo tratados. Una vez que este formulario haya sido actualizado por personal del Ministerio de Cultura de la Nación, el sistema le enviará un email automáticamente para continuar el trámite a través de esta misma plataforma.</p>
+                  </div>
+                  <div id="print-legal">Este documento fue generado a través del sistema de carga de Solicitudes online del Ministerio de Cultura de la Nación y el mismo podrá ser adjuntado al Expediente generado a partir del inicio formal del trámite. El mismo no tiene valor legal más que a título informativo.
+                  </div>
+                  <hr class="spacer" >
+                  <a href="#" id="submit-solicitud">
+                    <button type="button" class="btn btn-primary js-submit">Enviar solicitud</button>
+                  </a>
+                </div><!-- END STEP 4 -->
+
+              </div><!--STEP content-->
+            </div>
+          </div>
+
+        </div><!--END FORM-->
+
+
+
+      
+      </div><!-- huge row -->
+
+    </div><!-- container fluid -->
+  </section>
+
+  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title custom_align" id="Heading">Eliminar requerimiento</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-warning">
+            <span class="glyphicon glyphicon-warning-sign"></span> ¿Está seguro que desea eliminar este requerimiento?</div>       
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-success" >
+            <span class="glyphicon glyphicon-ok-sign"></span>Si</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span> No</button>
+        </div>
+      </div><!-- /.modal-content --> 
+    </div><!-- /.modal-dialog --> 
+  </div><!-- modal -->
+    
+</div><!-- end -->

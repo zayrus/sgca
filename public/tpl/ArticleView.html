@@ -1,0 +1,209 @@
+<div class="row">
+
+
+  <div class="navbar " style="z-index: 10;">
+      <div class="navbar-inner">
+          <div class="container">
+              <a class="btn btn-default navbar-btn btn-default" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar">1</span>
+                  <span class="icon-bar">2</span>
+                  <span class="icon-bar">3</span>
+              </a>
+
+              <a class="navbar-brand" href="#navegar/articulos">Edición de Notas / Artículos</a>
+              <div class="navbar-collapse collapse">
+                  <ul class="nav">
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acciones<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li><a class='notas' ><i class="icon-check"></i> agregar nota</a></li>
+                          </ul>
+                      </li>
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuevo<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#articulos/add">Articulo</a></li>
+                              <li><a href="#proyectos/add">Procedencia</a></li>
+                              <li><a href="#productos/add">Producto</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+
+                  <ul class="nav pull-right">
+                    <li><a class='btn btn-default btn btn-default-link eventos' >Eventos</a></li>
+                    <li><a class='btn btn-default btn btn-default-link browse' >Navegar Articulos</a></li>
+                    <li><a class='btn btn-default btn btn-default-link vista'  >Vista</a></li>
+                  </ul>
+              </div>
+              <!--/.navbar-collapse -->
+          </div>
+      </div>
+  </div>
+
+
+  <!-- form-PRODUCT   parent:  -->
+      <div class="row">
+        <div class="col-md-8">
+        <form class="form-horizontal col-md-12 core">
+          <fieldset>
+          <div class="form-group">
+              <label for="articleId" class="control-label">id:</label>
+              <div class="controls">
+                  <input id="articleId" name="id" type="text" value="<%= _id === null ? '' : _id %>"
+                         disabled ><br/>
+
+                  <select class="input-large" id="tiponota" name="tiponota" value="<%= tiponota %>">
+                    <%= utils.buildSelectOptions('tiponota',utils.notasOptionList, tiponota) %>
+                  </select>
+                  <input type="text" class="input-large" id="fecha" name="fecha" placeholder='fecha artículo' 
+                        value="<%= fecha %>"/>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- slug  / denom -->
+              <label for="slug" class="control-label">copete / título /responsable:</label>
+
+              <div class="controls">
+                <input type="text" class="input-large" id="slug" name="slug" 
+                    placeholder='copete' value="<%= slug %>"/>
+                <input type="text" class="input-large" id="denom" name="denom" placeholder="título" 
+                     value="<%= denom %>" >
+                <input type="text" class="input-large" id="responsable" name="responsable" 
+                      placeholder="responsable / autor" value="<%= responsable %>" >
+
+                <span class="help-inline"></span>
+              </div>
+          </div>
+          <div class="form-group">
+          <!-- slug  / denom -->
+              <label for="url" class="control-label">URL referencia:</label>
+              <div class="controls">
+                <input type="text" class="input-large" id="url" name="url" 
+                    placeholder='url destino' value="<%= url %>"/>
+                <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+          <!-- rubro  nivel_importancia estado_alta nivel_ejecucion -->
+              <label for="rubro" class="control-label">estados:</label>
+              <div class="controls">
+
+                <select class="input-large" id="estado_alta" name="estado_alta"  value="<%= estado_alta %>">
+                    <%= utils.buildSelectOptions('estado_alta',utils.estadoaltaOptionList, estado_alta) %>
+                </select>
+
+                <select class="input-large" id="nivel_importancia" name="nivel_importancia" 
+                  value="<%= nivel_importancia %>">
+                    <%= utils.buildSelectOptions('nivel_importancia',utils.nivelimportanciaOptionList, nivel_importancia) %>
+                </select>
+
+                <select class="input-large" id="nivel_ejecucion" name="nivel_ejecucion" 
+                  value="<%= nivel_ejecucion %>">
+                    <%= utils.buildSelectOptions('nivel_ejecucion',utils.notasexecutionOptionList, nivel_ejecucion)%>
+                </select>
+                <span class="help-inline"></span>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <!-- descriptores; -->
+                <label for="descriptores" class="control-label">descriptores (separadas por ';'):</label>
+                <div class="controls">
+                    <textarea id="descriptores" name="descriptores" style="width: 90%;" 
+                      rows="2"><%= descriptores %></textarea>
+                </div>
+          </div>
+   
+          <div class="form-group">
+            <!-- description   -->
+                <label for="description" class="control-label">descripcion</label>
+                <div class="controls">
+                    <textarea id="description" name="description" style="width: 90%;" 
+                    rows="2"><%= description %></textarea>
+                </div>
+          </div>
+        </fieldset>
+        </form>
+
+        <form class="form-horizontal col-md-12 facets">
+        <fieldset>
+
+          <div class="accordion" id="accordion1">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle branding" data-toggle="collapse"  href="#collapseBrnd">Alta de material para branding</a>
+              </div>
+              <div id="collapseBrnd" class="accordion-body collapse">
+                <div class="accordion-inner brandinghook"></div>
+                <div id='brndloaded' class='col-md-offset-2'></div>
+                <svg id='brnddrop' class='svgcontainer' width=700 height=160 >
+                     <rect x="2" y="5" rx="20" ry="20" width="680" height="150"
+                        style="fill:blue;stroke:black;stroke-width:3;fill-opacity:0.1;stroke-opacity:0.3"/>
+
+                    <text x=200   y=50   font-size=15 fill=3 fill-opacity=.5 font-family='Arvo' >arrastre y suelte los archivos aqui</text>
+                </svg>
+                <div class='col-md-offset-1'>
+                  <div class="brnddropped"></div> 
+                </div>
+                <div class="progress">
+                    <div id='brndprogressbar' class="bar" style="width: 0%;">progress</div>
+                </div> 
+                <div class="form-actions">
+                  <a href="#" class="btn btn-default btn btn-default-info    uploadbrnd">Subir contenido</a>
+                  <a href="#" class="btn btn-default btn btn-default-warning discardbrnd">Descartar contenido</a>
+                  <a href="#" class="btn btn-default btn btn-default-primary addnewbrnd">Alta nuevo branding</a>
+                  <a href="#" class="btn btn-default btn btn-default-warning cancelbrnd">Cancelar</a>
+                </div>
+              </div>
+            </div>
+
+          </div><!--   ends accordio1 -->
+          <div class="accordion" id="brandingaccordion"></div>
+
+        </fieldset>
+
+          <div class="form-actions ">
+            <a href="#" class="btn btn-default btn btn-default-primary save">Guardar</a>
+            <a href="#" class="btn btn-default btn btn-default-danger delete">Eliminar</a>
+            <a href="#" class="btn btn-default btn btn-default-warning clonar">Clonar</a>
+          </div>
+          <div class="row status-bar">
+              <div class="col-md-12">
+                  <div class="alert alert-success" style="display: none">
+                      <b>INFO:</b> El registro se guardó exitosamente
+                  </div>
+              </div>
+          </div>
+
+        </form>
+ 
+
+      </div><!--  main first col content span 8 -->
+
+
+        <div class="col-md-4"> <!--  main second col span 4 -->
+          <div  class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+            <div class='nav-header'>Relacionados</div>
+            <div id="chapters1"></div>  
+          </div><!--/.well side bar -->
+          <div  class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+            <div class='nav-header'>Ancestro</div>
+            <div id="ancestor1" class="nav nav-list"></div>
+          </div><!--/.well side bar -->
+          <div  class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+            <div class='nav-header'>Assets</div>
+                <div id='assets1' class="accordion" id="assetaccordion"></div>
+          </div><!--/.well side bar -->
+          <div  class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+            <div class='nav-header'>Notas</div>
+            <div id="notas1" class="nav nav-list"></div>
+          </div><!--/.well side bar -->
+ 
+        </div><!--  sidebar right span 4 -->
+ 
+      </div><!--  end master row  -->
+</div>
+
+

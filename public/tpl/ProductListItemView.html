@@ -1,0 +1,14 @@
+<a href="#productos/<%= _id %>" class="plain" >
+<div class='row col-md-9' >
+    <svg class='svgcontainer' width=800 height=27>
+    	<text x=1  y=20  font-size=15 fill=<%= utils.viewData.product.eventFillColor[nivel_importancia] %> 
+              fill-opacity=<%= utils.viewData.product.fillOpacity[nivel_ejecucion]%> font-family='Arvo' ><%= productcode %>:</text>
+    	<text x=80  y=20  font-size=18 fill=<%= utils.viewData.product.eventFillColor[nivel_importancia] %> 
+              fill-opacity=<%= utils.viewData.product.fillOpacity[nivel_ejecucion]%> font-family='Arvo' ><%= denom %></text>
+    </svg>
+</div>
+<div class='row col-md-9' >
+    <%= slug %> / [<%= tipoproducto %>]-[<%= nivel_ejecucion %>]-[<%= nivel_importancia %>]-[<%= estado_alta %>]<br/>
+    <i class="icon-comment"></i> <%= clasification.descripcion %><br/>
+</div>
+</a>

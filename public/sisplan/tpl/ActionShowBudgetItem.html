@@ -1,0 +1,8 @@
+<td><%= utils.fetchLabel(utils.budgetTemplate[tgasto], sgasto) %>: <%= slug %></td>
+<td><%= fecha_prev %></td>
+<td><%= trim_fiscal %></td>
+<td><%= tramita %></td>
+<td><%= presuprog %> / <%= presuinciso %></td>
+<td><%= cantidad %> <%= utils.fetchLabel(utils.umeList, ume) %> <%= (freq != "1" ? " x " + freq + " " + utils.fetchLabel(utils.umeFreqList, umefreq): "") %> </td>
+<td><span class="pull-right"><%= accounting.formatNumber(punit) %></span></td>
+<td><span class="pull-right"><%= accounting.formatNumber(importe) %></span></td>

@@ -1,0 +1,190 @@
+<div class="row">
+<div class="container">
+
+    <form class="form-horizontal col-md-12">
+        <!-- form-horizontal form-inLine div: container vs. row -->
+        <fieldset>
+            <div class="row">
+                <div class="col-md-9">
+
+                    <div class="form-group">
+                        <label for="projectId" class="control-label">Id/Agenda dd/mm/aaaa:</label>
+
+                        <div class="controls">
+                            <input id="projectId" name="id" type="text" value="<%= _id === null ? '' : _id %>"
+                                   disabled/>
+
+                            <!-- <input type="text" class="input-medium" id="eventdatestr" name="eventdatestr" placeholder='Fecha dd/mm/aaaa' value="<%= eventdatestr %>"/> -->
+
+                             <input type="text" name="eventdatestr" id="eventdatestr" class="datepicker" data-date-format="dd/mm/yyyy" placeholder="Fechass" value="<%= eventdatestr %>"/>
+
+                            
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slug" class="control-label">Identificador/Denom Tipo/Relevancia:</label>
+
+                        <div class="controls">
+                            <input type="text" class="input-large" id="slug" name="slug" placeholder="Identificador evento / proyecto" 
+                               value="<%= slug %>"/>
+                            
+                            <input type="text" class="input-large" id="denom" name="denom" placeholder="Denominación oficial del evento" value="<%= denom %>"/>
+                            
+                            <datalist id='generoList'> 
+                                <option value='no_definido'    label='-tipo de evento-'>
+                                <option value='concurso'       label='fomento/concurso' >
+                                <option value='convenio'       label='convenio' >
+                                <option value='cesiones'       label='cesiones recibidas' >
+                                <option value='producciones'   label='producciones a pedido' >
+                                <option value='adhesiones'     label='adhesiones recibidas' >
+                                <option value='musica'         label='música' >
+                                <option value='teatro'         label='teatro' >
+                                <option value='musical'        label='teatro musical' >
+                                <option value='infantil'       label='infantil'>
+                                <option value='circo'          label='circo' >
+                                <option value='cine'           label='cine'  >
+                                <option value='festival'       label='festival' >
+                                <option value='fpopular'       label='fiesta popular' >
+                                <option value='danza'          label='danza' >
+                                <option value='congreso'       label='congreso' >
+                            </datalist>
+                            <input type="text" class="input-large"  multiple list='generoList' 
+                                   id="genero" name="genero" value="<%= genero %>" placeholder="tipo de evento"/>
+
+                            <select class="input-large" id="nivel_importancia" name="nivel_importancia" value="<%= nivel_importancia %>">
+                                <option value='no_definido'
+                                <%= nivel_importancia == 'no_definido' ? 'selected':'' %>>--nivel relevancia--</option>
+                                <option value='bajo'
+                                <%= nivel_importancia == 'bajo' ? 'selected':'' %>>bajo</option>
+                                <option value='medio'
+                                <%= nivel_importancia == 'medio' ? 'selected':'' %>>medio</option>
+                                <option value='alto'
+                                <%= nivel_importancia == 'alto' ? 'selected':'' %>>alto</option>
+                                <option value='critico'
+                                <%= nivel_importancia == 'critico' ? 'selected':'' %>>critico</option>
+                             </select>
+
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organismo" class="control-label">Organismo responsable:</label>
+
+                        <div class="controls">
+                            <input type="text" class="input-large" id="organismo" placeholder='organismos a cargo' name="organismo" value="<%= organismo %>"/>
+                            <span class="help-inline"></span>
+
+                            <label class="radio inline">
+                                <input type="radio" id="isPropio" name="isPropio" value=1 <%= isPropio == 1 ? 'checked':'' %>>Evento BACUA
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" id="isPropio" name="isPropio" value=0 <%= isPropio == 0 ? 'checked':'' %>>Externo
+                            </label>
+                        </div>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label for="city" class="control-label">Ciudad:</label>
+
+                        <div class="controls">
+                            <input type="text" id="city" name="city" value="<%= city %>"/> 
+                        </div>
+                    </div>
+
+
+                   <div class="form-group">
+                        <label for="estado_alta" class="control-label">Estado</label>
+                        <div class="controls">
+
+                            <select class="input-medium" id="estado_alta" name="estado_alta" value="<%= estado_alta %>">
+                                <option value='activo'
+                                <%= estado_alta == 'activo' ? 'selected':'' %>>activo</option>
+                                <option value='suspendido'
+                                <%= estado_alta == 'suspendido' ? 'selected':'' %>>suspendido</option>
+                                <option value='cerrado'
+                                <%= estado_alta == 'cerrado' ? 'selected':'' %>>cerrado</option>
+                                <option value='baja'
+                                <%= estado_alta == 'baja' ? 'selected':'' %>>baja</option>
+                             </select>
+
+                            <select class="input-medium" id="nivel_ejecucion" name="nivel_ejecucion" value="<%= nivel_ejecucion %>">
+                                <option value='no_definido'
+                                <%= nivel_ejecucion == 'no_definido' ? 'selected':'' %>>--nivel ejecucion--</option>
+                                <option value='planificado'
+                                <%= nivel_ejecucion == 'planificado' ? 'selected':'' %>>planificado</option>
+                                <option value='produccion'
+                                <%= nivel_ejecucion == 'produccion' ? 'selected':'' %>>en produccion</option>
+                                <option value='demorado'
+                                <%= nivel_ejecucion == 'demorado' ? 'selected':'' %>>demorado</option>
+                                <option value='reprogramado'
+                                <%= nivel_ejecucion == 'reprogramado' ? 'selected':'' %>>reprogramado</option>
+                                <option value='suspendido'
+                                <%= nivel_ejecucion == 'suspendido' ? 'selected':'' %>>suspendido</option>
+                                <option value='cumplido'
+                                <%= nivel_ejecucion == 'cumplido' ? 'selected':'' %>>cumplido</option>
+                             </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="responsable" class="control-label">Responsable:</label>
+
+                        <div class="controls">
+                            <input type="text" id="responsable" placeholder='lista de productores afectados' name="responsable" value="<%= responsable %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="control-label">Notas:</label>
+                        <div class="controls">
+                            <textarea id="description" name="description" style="width: 90%;" rows="2"><%= description
+                                %></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="well" >
+                        <p><img id="picture" name='uploadfile' src="<%= picture === null ? 'pics/prj-update.png' : 'pics/' + picture %>"/></p>
+                        <p id='uploaded'></p>
+                        <div class="progress">
+                            <div id='uplprogressbar' class="bar" style="width: 0%;"></div>
+                        </div> 
+
+                    </div>
+                    <div class="well" >
+                        <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-primary addresources">Alta recursos</a>
+                        <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-success browseresources">Ver recursos</a>
+                        <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-primary addquotation">Alta requisitoria</a>
+                        <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-success browsequotations">Ver requisitorias</a>
+
+                    </div>
+ 
+                </div>
+
+            </div>
+
+        </fieldset>
+        <div class="form-actions col-md-7">
+            <a href="#" class="btn btn-default btn btn-default-primary save">Guardar</a>
+            <a href="#" class="btn btn-default btn btn-default-danger delete">Eliminar</a>
+            <a href="#" class="btn btn-default btn btn-default-warning clonar">Clonar</a>
+        </div>
+
+    </form>
+
+</div>
+</div>
+
+<div class="row status-bar">
+    <div class="col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>INFO:</b> El registro se guardó exitosamente
+        </div>
+    </div>
+</div>

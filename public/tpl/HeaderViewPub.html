@@ -1,0 +1,102 @@
+
+<!--       
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= displayName %><span class="glyphicon glyphicon-user pull-right"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#personas/<%= es_usuario_de[0].id %>">Configuración <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+		            <li class="divider"></li>
+		            <li><a href="/logout">Salir <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+		          </ul>
+		        </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+-->
+
+    <header>
+      <div class="mainnav navbar navbar-default navbar-fixed-top micultura">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="http://www.cultura.gob.ar/static/img/logo-cultura-nacion.png" class="img-responsive">
+                </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span><%= displayName %> <i class="caret"></i></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header bg-mcn-blue">
+                        <img src="/css/img/avatar1.png" class="img-circle" alt="User Image" />
+                        <p>
+                            <%= name %>
+                            <small>Miembro desde Nov. 2014</small>
+                        </p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <div class="pull-left">
+                            <a href="#perfil" class="btn btn-default btn-flat">Perfil</a>
+                        </div>
+                        <div class="pull-right">
+                            <a href="/logout" class="btn btn-default btn-flat">Salir</a>
+                        </div>
+                    </li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+      <div>  
+          <nav class="subnav navbar navbar-collapse2" role="navigation">
+            <div class="container">
+              <div class="navbar-header row">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse2">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="menu">
+              <ul>
+                <li><a class="" href="#">Mi Cultura</a></li>
+                <li role="presentation" class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    Trámites <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="/sta/sta-list.html">Solicitudes técnico artísticas</a></li>
+                    <li><a href="/mica2015/">Rondas de Negocios - MICA 2015</a></li>
+                  </ul>
+                </li>
+                <li><a class="" href="#">Agenda Cultural</a></li>
+              </ul>
+            </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+    </header>

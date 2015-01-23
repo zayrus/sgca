@@ -1,0 +1,475 @@
+<!--  ====================  ProductList LAYOUT SIDE-BAR ==========================  -->
+<div class="fuelux">
+<section class="page-view">
+  <div class="container-fluid" role="main">
+    <div class="row">
+      <div class="col-xs-pull-1 col-xs-push-1 col-xs-10 margin-section">
+        
+        <div class="col-xs-12 col-md-8" id="heading">
+			<h3>Formularios</h3>
+			<h2>Solicitudes Técnico-Artísticas Municipales</h2>
+			<h5>A través del siguiente formulario se generará la solicitud formal que será evaluada por el Ministerio de Cultura de la Nación</h5>
+		</div>
+        
+        <div class="row col-md-12">
+			<div class="col-xs-12 col-md-8 form">
+			
+<!--BEG FORM-->			
+<div class="fu-example section">
+    <div class="wizard" data-initialize="wizard" id="myWizard">
+	  <ul class="steps" style="margin-left: 0">
+	    <li data-step="1" class="active"><span class="badge badge-info">1</span>Evento<span class="chevron"></span></li>
+	    <li data-step="2"><span class="badge">2</span>Responsables<span class="chevron"></span></li>
+	    <li data-step="3"><span class="badge">3</span>Requerimientos<span class="chevron"></span></li>
+	    <li data-step="4"><span class="badge">4</span>Confirmación<span class="chevron"></span></li>
+	  </ul>
+	  <div class="actions">
+	    <button class="btn btn-default btn-prev" disabled="disabled"><span class="glyphicon glyphicon-arrow-left"></span></button>
+	    <button class="btn btn-default btn-next" data-last="Guardar"><span class="glyphicon glyphicon-arrow-right"></span></button>
+	  </div>
+	  <div class="step-content">
+	    <div class="step-pane active" data-step="1">
+      <h4>Evento</h4>
+      	<div class="form-group">
+	        <div class="row">
+	            <div class="col-sm-8">
+	                <label class="control-label">Denominación del evento</label>
+	                <input type="text" class="form-control" name="slug" />
+	            </div>
+	
+	            <div class="col-sm-4 selectContainer">
+	                <label class="control-label">Tipo de evento</label>
+	                <select class="form-control" name="tipo_evento">
+	                    <option value="">Seleccione un tipo</option>
+	                    <option value="fiesta">Fiesta</option>
+	                    <option value="carnaval">Carnaval</option>
+	                </select>
+	            </div>
+	        </div>
+	    </div>
+	    
+	    <div class="form-group">
+	        <div class="row">
+	            <div class="col-sm-4 selectContainer">
+	                <label class="control-label">Provincia</label>
+	                <select class="form-control" name="provevento">
+	                    <option value="">Seleccione una provincia</option>
+	                    <option value="caba">Ciudad Autónoma de Buenos Aires</option>
+	                    <option value="buenosaires">Buenos Aires</option>
+						<option value="catamarca">Catamarca</option>
+						<option value="chaco">Chaco</option>
+						<option value="chubut">Chubut</option>
+						<option value="cordoba">Córdoba</option>
+						<option value="corrientes">Corrientes</option>
+						<option value="entrerios">Entre Ríos</option>
+						<option value="formosa">Formosa</option>
+						<option value="jujuy">Jujuy</option>
+						<option value="lapampa">La Pampa</option>
+						<option value="larioja">La Rioja</option>
+						<option value="mendoza">Mendoza</option>
+						<option value="misiones">Misiones</option>
+						<option value="neuquen">Neuquén</option>
+						<option value="rionegro">Río Negro</option>
+						<option value="salta">Salta</option>
+						<option value="sanjuan">San Juan</option>
+						<option value="sanluis">San Luis</option>
+						<option value="santacruz">Santa Cruz</option>
+						<option value="santafe">Santa Fe</option>
+						<option value="santiagodelestero">Santiago del Estero</option>
+						<option value="tierradelfuego">Tierra del Fuego</option>
+						<option value="tucuman">Tucumán</option>
+	                </select>
+	            </div>
+	            
+	            <div class="col-sm-6">
+	                <label class="control-label">Localidad</label>
+	                <input type="text" class="form-control" name="locevento" />
+	            </div>
+	
+	            <div class="col-sm-2">
+	                <label class="control-label">CP</label>
+	                <input type="text" class="form-control" name="cpevento" />
+	            </div>
+	        </div>
+	    </div>
+	    
+	    <div class="form-group">
+	        <label class="control-label">Descripción del evento</label>
+	        <textarea class="form-control" name="devento" rows="4" value=<%= items[0].devento %> ><%= items[0].devento %></textarea>
+	    </div>
+	    
+	    <div class="form-group">
+	        <label class="control-label">Descripción solicitud</label>
+	        <textarea class="form-control" name="description" rows="4" placeholder="Descripción ejecutiva de la solicitud. Justificación" value='<%= description %>'><%= description %></textarea>
+	    </div>
+		
+		<div class="row col-sm-12">
+		<div class="form-group well-transparent bg-info col-sm-6">
+		    <div class="row">
+		    	
+		        <div class='col-sm-12'>
+		        		<label class="control-label">Fecha y hora del evento</label>
+		                <div class='input-group date' id='fevento'>
+		                    <input type='text' class="form-control" name="fevento" />
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		        </div>
+		        <div class='col-sm-12'>
+			        <label class="control-label">Texto descriptivo de la fecha y horario seleccionada</label>
+					<textarea class="form-control" name="leyendafecha" rows="4"></textarea>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="form-group col-sm-5 col-sm-push-1">
+		    <div class="row">
+				    <label class="control-label">Lugar donde se realizará el evento</label>
+			        <textarea class="form-control" name="description" rows="4"></textarea>
+		    </div>
+		</div>
+		
+		<div class="form-group col-sm-5 col-sm-push-1">
+		    <div class="row">
+				    <label class="control-label">¿El evento es al aire libre?</label>
+					<input type="checkbox" name="airelibre" id="airelibre" checked>
+		    </div>
+		</div>
+		</div>
+    </div><!-- END EVENTO -->
+	    
+	    <div class="step-pane" data-step="2">
+      <h4>Responsable administrativo</h4>
+        <div class="form-group">
+	        <div class="row">
+	            <div class="col-sm-4">
+	                <label class="control-label">Nombre y apellido</label>
+	                <input type="text" class="form-control" name="nsolicitante" />
+	                <!--A completar automáticamente-->
+	            </div>
+	
+	            <div class="col-sm-4">
+	                <label class="control-label">Email</label>
+	                <input type="email" class="form-control" id="esolicitante" placeholder="Email">
+	                <!--A completar automáticamente-->
+	            </div>
+	
+	            <div class="col-sm-4">
+	                <label class="control-label">Teléfono</label>
+	                <input type="text" class="form-control" name="tsolicitante" />
+	            </div>
+	        </div>
+		</div>
+	  <hr>
+	  <h4>Responsable Técnico</h4>
+		<div class="form-group">
+	        <div class="row">
+	            <div class="col-sm-4">
+	                <label class="control-label">Nombre y apellido</label>
+	                <input type="text" class="form-control" name="ntecnico" />
+	                <!--A completar automáticamente-->
+	            </div>
+	
+	            <div class="col-sm-4">
+	                <label class="control-label">Email</label>
+	                <input type="email" class="form-control" id="etecnico" placeholder="Email">
+	                <!--A completar automáticamente-->
+	            </div>
+	
+	            <div class="col-sm-4">
+	                <label class="control-label">Teléfono</label>
+	                <input type="text" class="form-control" name="ttecnico" />
+	            </div>
+	        </div>
+		</div><!--END RESPONSABLES-->
+		
+    </div><!-- END RESPONSABLES -->
+	    
+	    <div class="step-pane" data-step="3">
+	      <h4>Requerimientos</h4>
+	      <p class="bg-info well-transparent row">A fín de establecer un contrato plurilateral deberán ser cargados tanto los requerimientos solicitados al Ministerio de Cultura de la Nación, como aquellos de los que el Municipio se compromete a cumplir.</p>
+	      	<a href="#" id="crear-nuevo-req" onclick="return false">
+				<button type="button" class="btn btn-primary">Crear nuevo requerimiento</button>
+	      	</a>
+	      	
+	      	<!--NUEVO REQ-->
+	      	<div id="nuevo-req" class="col-xs-12 col-md-12 sistema-box hide">
+	      			<h5>Requerimientos</h5>
+				    <div class="form-group">
+			        <div class="row">
+			        
+			        	<div class="form-group col-sm-12">
+							<label class="control-label">Nombre del recurso solicitado</label>
+							<input class="form-control" name="nombrerecurso-1" rows="4"></input>
+						</div>
+			        
+			            <div class="col-sm-6">
+			                <label class="control-label">Requerido por</label>
+			                <select class="form-control" name="requeridopor">
+			                    <option value="">Seleccione una opción</option>
+			                    <option value="municipio">Municipio</option>
+			                    <option value="mcn">Ministerio de Cultura</option>
+							</select>
+			            </div>
+			            <div class="col-sm-6">
+			                <label class="control-label">A cargo de</label>
+			                <select class="form-control" name="acargode">
+			                    <option value="">Seleccione una opción</option>
+			                    <option value="municipio">Municipio</option>
+			                    <option value="mcn">Ministerio de Cultura</option>
+							</select>
+			            </div>
+			        </div>
+					</div>
+					
+				    <div class="form-group">
+				        <div class="row">
+				            <div class="col-sm-12">
+				                <label class="control-label">Tipo de requerimiento</label>
+				                <select class="form-control" name="trequerim">
+				                    <option value="">Artística</option>
+									<option value="">Movilidad</option>
+									<option value="">Alojamiento</option>
+									<option value="">Pasajes</option>
+									<option value="">Seguridad</option>
+									<option value="">Escenario</option>
+									<option value="">Técnica</option>
+									<option value="">Catering</option>
+									<option value="">Baños</option>
+								</select>
+				            </div>
+						</div>
+				    </div>    
+					
+					<div class="form-group">
+						<div class="row">
+						
+				            <div class="form-group col-sm-12">
+								<label class="control-label">Descripción del recurso solicitado</label>
+								<textarea class="form-control" name="description" rows="4"></textarea>
+							</div>
+							
+							<div class="form-group col-sm-12">
+								<label class="control-label">Fecha, hora y lugar del recurso solicitado</label>
+								<textarea class="form-control" name="lugarfecha" rows="2"></textarea>
+							</div>
+							
+							<div class="form-group col-sm-12">
+								<label class="control-label">Comentario del MCN</label>
+								<textarea class="form-control" name="comentario" rows="4"></textarea>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+				        <div class="row">
+				           <div class="col-sm-12 selectContainer">
+				                <label class="control-label">Estado de aprobación Municipio</label>
+				                <select class="form-control" name="itemaprobreq">
+				                    <option value="">Seleccione estado</option>
+				                    <option value="a_aprobado">Aprobado</option>
+				                    <option value="a_rechazado">Rechazado</option>
+				                    <option value="a_observado">Observado</option>
+				                    <option value="a_pendiente">Pendiente</option>
+				                </select>
+				            </div>
+				        </div>
+				    </div>
+					<a href="#" id="crear-nuevo-req" onclick="return false">
+						<button type="button" class="btn btn-primary">Guardar requerimiento</button>
+			      	</a>
+	      			<br><br></div><!--END NUEVO REQ-->
+	      	
+	      	<div class="col-xs-12 col-md-12 sistema-box row spacer">
+		      	<h5>Requerimientos solicitados</h5>
+		      	
+		      	<!--BEG TABLA DE REQUERIMIENTOS-->
+		      	<table id="example" class="table table-striped table-condensed" cellspacing="0" width="100%">
+			        <thead>
+			            <tr>
+			                <th>Tipo</th>
+			                <th>Descripción</th>
+			                <th>Responsable</th>
+			                <th>Status</th>
+			                <th></th>
+			                <th></th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+			                <td>Artística</td>
+			                <td><div><strong>14/02/2015</strong></div><div class="clearfix">Solicitud del artísta Raly Barrionuevo para el cierre del festival</div></td>
+			                <td>MCN</td>
+			                <td><span class="label label-info">Pendiente</span></td>
+			                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+							<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+			            </tr>
+			            <tr>
+			                <td>Alojamiento</td>
+			                <td><div><strong>14/02/2015</strong></div><div class="clearfix">Alojamiento para el número de personas solicitadas por el artista para el día del show y su día previo.</div></td>
+			                <td>Municipio</td>
+			                <td><span class="label label-success">Aprobado</span></td>
+			                <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+							<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+			            </tr>
+			        </tbody>
+				</table>
+				
+		      	<!--BEG TABLA DE REQUERIMIENTOS-->
+		      	
+	      	</div>
+	    </div><!-- END REQUERIMIENTOS -->
+	    
+	    <div class="step-pane" data-step="4">
+      <h4>SOLICITUD TÉCNICO ARTÍSTICA</h4>
+      <div class="bg-danger well-transparent row" id="requisite">
+	      <p>Verifique que los datos que se listan a continuación sean correctos. Al hacer click en <strong>GUARDAR</strong> se iniciará el trámite de Solicitud Técnico-Artística y el mismo será evaluado y procesado por el Ministerio de Cultura de la Nación.</p><p>Los requerimientos podrán ser aprobados o rechazados en su totalidad o en parte. </p><p>En su <a href="/forms/">Panel de Gestión</a> encontrará ésta solicitud y su historial de requerimientos para continuar siendo tratados. Una vez que este formulario haya sido actualizado por personal del Ministerio de Cultura de la Nación, el sistema le enviará un email automáticamente para continuar el trámite a través de esta misma plataforma.</p>
+      </div>
+      <h4 class="spacer">Evento</h4>
+      <hr>
+      <h4><strong>Fiesta de los Pescadores 2015</strong></h4>
+      <p><strong>Tipo:</strong> Festival</p>
+      <p><strong>Lugar del evento:</strong> Mar del Plata, Municipio de General Pueyrredón, Provincia de Buenos Aires [7600].</p>
+      <p><strong>Descripción del evento:</strong> La Fiesta Nacional de los pescadores, es una fiesta típica llevada a cabo por la comuna portuaria de Mar del Plata, generalmente, en el mes de enero. En los últimos años esta fiesta fue realizada durante la segunda quincena de enero, y aunque esta fecha puede variar, generalmente se lleva a cabo en esta época por ser la más propicia a causa del gran afluente de turistas que convoca la ciudad durante este periodo y que ha hecho a través de los años, que la fiesta sea un verdadero éxito.</p>
+      <p><strong>Descripción ejecutiva:</strong> Esta fiesta que se extiende generalmente por dos semanas convoca a innumerable cantidad de turistas y residentes de la ciudad que suelen reunirse durante este periodo para formar parte del evento que suele inaugurarse con la típica tirada de fideos, evento que cuenta con la participación del intendente de la ciudad, autoridades reconocidas del sector, el presidente de la sociedad de patrones pescadores y la reina electa el año anterior.</p>
+      <p><strong>Fecha hito:</strong> 14 de Enero de 2015</p>
+      <p><strong>Comentarios adicionales de la fecha:</strong> La fiesta se extiende por 15 días.</p>
+      <p><strong>Lugar donde se realiza el evento:</strong> El cierre de la fiesta será en el Muelle de los pescadores, Escollera Club de Pesca -- Bvard Maritimo y Av. Luro.</p>
+      <p><strong>¿El evento es al aire libre?</strong> SÍ</p>
+      
+      <h4 class="spacer">Responsables</h4>
+      <hr>
+      <p><strong>Responsable administrativo</strong></p>
+      <div><strong>Nombre y apellido:</strong> Juan Ignacio García</div>
+      <div><strong>Email:</strong> jigarcia@gmail.com</div>
+      <div><strong>Teléfono:</strong> 0223 4478-9019</div>
+      <p class="spacer"><strong>Responsable técnico</strong></p>
+      <div><strong>Nombre y apellido:</strong> Martín Rodriguez</div>
+      <div><strong>Email:</strong> mrodriguez@gmail.com</div>
+      <div><strong>Teléfono:</strong> 0223 4478-3099 interno 23</div>
+      
+      <h4 class="spacer">Requerimientos</h4>
+      <hr>
+      <div class="bs-callout bs-callout-info">
+	    <h4><strong>Solicitud del artísta Raly Barrionuevo para el cierre del festival</strong></h4>
+	    <p><strong>Requerido por:</strong> Municipalidad de General Pueyrredón</p>
+		<p><strong>A cargo de:</strong> Ministerio de Cultura de la Nación</p>
+		<p><strong>Tipo de requerimiento:</strong> Artística</p>
+		<p><strong>Descripción del recurso:</strong> Para el cierre del Festival nos gustaría contar con la presencia del artísta Raly Barrionuevo.</p>
+		<p><strong>Fecha, hora y lugar del recurso:</strong> El cierre del Festival es el día 25 de Enero de 2015 y el horario estipulado para el show de cierre es a las 23.30 hs. en el Muelle de los pescadores, Escollera Club de Pesca -- Bvard Maritimo y Av. Luro.</p>
+		<p><strong>Observaciones / comentarios del MNC:</strong> Aún no se han registrado comentarios.</p>
+		<p><strong>Estado de aprobación del Ministerio de Cultura de la Nación:</strong> PENDIENTE</p>
+		<p><strong>Estado de aprobación del Municipio:</strong> PENDIENTE</p>
+	  </div>
+	  
+	  <hr>
+	  
+	  <div class="bs-callout bs-callout-info">
+	    <h4><strong>Alojamiento para el número de personas solicitadas por el artista Raly Barrionuevo para el día del show y su día previo</strong></h4>
+	    <p><strong>Requerido por:</strong> Municipalidad de General Pueyrredón</p>
+		<p><strong>A cargo de:</strong> Municipalidad de General Pueyrredón</p>
+		<p><strong>Tipo de requerimiento:</strong> Alojamiento</p>
+		<p><strong>Descripción del recurso:</strong> Alojamiento para el número de personas solicitadas por el artista para el día del show y su día previo en el Gran Hotel Provincial (www.granhotelprovincial.net).</p>
+		<p><strong>Fecha, hora y lugar del recurso:</strong> El cierre del Festival es el día 25 de Enero de 2015 y el horario estipulado para el show de cierre es a las 23.30 hs. en el Muelle de los pescadores, Escollera Club de Pesca -- Bvard Maritimo y Av. Luro.</p>
+		<p><strong>Observaciones / comentarios del MNC:</strong> Aún no se han registrado comentarios.</p>
+		<p><strong>Estado de aprobación del Ministerio de Cultura de la Nación:</strong> PENDIENTE</p>
+		<p><strong>Estado de aprobación del Municipio:</strong> APROBADO</p>
+	  </div>
+      
+      <div id="print-legal">Este documento fue generado a través del sistema de carga de Solicitudes online del Ministerio de Cultura de la Nación y el mismo podrá ser adjuntado al Expediente generado a partir del inicio formal del trámite. El mismo no tiene valor legal más que a título informativo.</div>
+      <hr class="spacer" />
+      <a href="#" id="crear-nuevo-req" onclick="return false">
+		  <button type="button" class="btn btn-primary">Enviar solicitud</button>
+	  </a>
+            
+    </div><!-- END CONFIRMACION -->
+	  </div>
+
+    </div>
+  </div>
+<!--END FORM-->
+
+			</div>
+			
+		<!--BEG PANEL DERECHO-->
+		<article id="sidebar" class="col-xs-12 col-md-4 sistema-box">
+			<div class="content">
+				      <h4>
+                           <text><%= slug %></text>
+                      </h4>    
+			<!-- BEG BODY -->
+				<div class="content-body">
+				<div class="req-row">Criticidad<span class="label label-danger">Alto</span><hr></div><!-- END Solo Usuarios MCN -->
+				<!--<div id="bar" class="progress progress-striped active">
+				  <div class="bar"></div>
+				</div>-->
+				<h5 class="spacer">
+					<span class="glyphicon glyphicon-calendar"></span>  14 ENE 2015
+				</h5>
+				<h1>Fiesta de los Pescadores 2015</h1>
+				<p><span class="glyphicon glyphicon-map-marker"></span> Mar del Plata, General Pueyrredón, Buenos Aires</p>
+				<p>Los festejos incluyen desfiles, números humorísticos, bailes populares, show de fuegos artificiales y un almuerzo de despedida con el que tradicionalmente cierra la celebración.</p>
+				</div><!-- END BODY -->
+					
+			<!-- BEG BOTTOM -->
+				<div class="well transparent">
+					<h5>Estado de los requerimientos solicitados</h5>
+					<!--BEG TABLA DE REQUERIMIENTOS-->
+					<table id="example" class="table" cellspacing="0" width="100%">
+				        <tr>
+				        	<td>
+				        		<span class="pull-right label label-info">Pendiente</span>
+				        		<div><strong>14/02/2015</strong></div>
+				        		<div class="clearfix">Solicitud del artísta Raly Barrionuevo para el cierre del festival</div>
+							</td>
+			            </tr>
+			            <tr>
+				        	<td>
+				        		<span class="pull-right label label-success">Aprobado</span>
+				        		<div><strong>14/02/2015</strong></div>
+				        		<div class="clearfix">Alojamiento para el número de personas solicitadas por el artista para el día del show y su día previo</div>
+							</td>
+			            </tr>
+			        </table><!--END TABLA DE REQUERIMIENTOS-->
+				</div><!-- END BOTTOM -->
+				
+			<!-- BEG STATUS // Solo Usuarios MCN -->
+				<div class="content-bottom">
+				<h5>Estado de la solicitud</h5>
+					<div class="req-row">Aprobación Municipal<span class="label label-success">Aprobado</span></div>
+				<!-- Solo Usuarios MCN -->
+					<div class="req-row">Avance MCN<span class="label label-info">Bajo</span></div>
+					<div class="req-row">Aprobación MCN<span class="label label-warning">Observado</span></div>
+				</div><!-- END STATUS -->
+			</div>
+		</article><!--END PANEL DERECHO-->
+		
+		</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title custom_align" id="Heading">Eliminar requerimiento</h4>
+      </div>
+          <div class="modal-body">
+       
+       <div class="alert alert-warning"><span class="glyphicon glyphicon-warning-sign"></span> ¿Está seguro que desea eliminar este requerimiento?</div>
+       
+      </div>
+        <div class="modal-footer ">
+        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Si</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+      </div>
+        </div>
+    <!-- /.modal-content --> 
+  </div>
+      <!-- /.modal-dialog --> 
+</div>
+    
+</div>

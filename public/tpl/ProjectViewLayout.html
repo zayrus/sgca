@@ -1,0 +1,56 @@
+<!--  ====================   SIDE-BAR ==========================  -->
+<div class="row">
+<div class="col-md-3">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Seleccionar recursos</li>
+      <li><input type='text' placeholder='rubro' class='input-medium' id='rubro' name='rubro' value=<%= rubro %> ></li>
+      <li><input type='text' placeholder='responsable' class='input-medium' id='responsable' name='responsable' value=<%= responsable %> ></li>
+      <li><input type='text' placeholder='contraparte' class='input-medium' id='contraparte' name='contraparte' value=<%= contraparte %> ></li>
+      <li><datalist id='ejecucionList'> 
+            <option value='planificando' label='planificado'>
+            <option value='rfi' label='informacion'>
+            <option value='tdr' label='tdr'>
+            <option value='compras' label='compras' >
+            <option value='adjudicado' label='adjudicado'>
+            <option value='a_entregar' label='a entregar'>
+            <option value='entregado' label='entregado'>
+            <option value='cumplido' label='cumplido'>
+          </datalist>
+          <input type="text" class="input-medium"  multiple list='ejecucionList' placeholder='nivel de ejecucion' id="nivel_ejecucion" name="nivel_ejecucion" value=<%= nivel_ejecucion %> ></li>
+    </ul>
+  </div><!--/.well side bar -->
+  <div class="well sidebar-nav">
+    <div id='assets' class="accordion" id="accordion"></div>
+  </div><!--/.well side bar -->
+</div><!--/col-md-23side bar-->
+
+<!-- START Content  tabs -->
+<div class="col-md-9">
+    <div id="prjheader"></div>
+
+    <div class="col-md-9">
+        <h3>Productos audiovisuales y otros objetos culturales</h3>
+        <div id="productlist" class="col-md-10>"></div>
+    </div>
+
+    <div class="col-md-9">
+        <h3>Recursos</h3>
+        <div id="reslist" class="col-md-10>"></div>
+    </div>
+
+    <div class="col-md-9">
+        <div id="resdetail" class="col-md-10>"></div>
+    </div>
+
+    <div class="row status-bar">
+        <div class="col-md-9">
+            <div class="alert alert-success" style="display: none">
+                <b>INFO:</b> El registro se guardó exitosamente
+            </div>
+        </div>
+    </div>
+
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

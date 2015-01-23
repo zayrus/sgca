@@ -1,0 +1,46 @@
+<form class="form-horizontal">
+<div class="form-group">
+    <label for="durnominal" class="control-label">duración nominal (mín):</label>
+
+    <div class="controls">
+        <input id="durnominal"   name="durnominal"   type="text" value="<%= durnominal %>" autofocus >
+        <span class="help-inline"></span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fecreacion" class="control-label">fecha de creación (dd/mm/aaaa):</label>
+
+    <div class="controls">
+        <input id="fecreacion"   name="fecreacion"   type="text" value="<%= fecreacion %>" >
+        <span class="help-inline"></span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="cantcapitulos" class="control-label">Cantidad de capitlos/unitarios:</label>
+
+    <div class="controls">
+        <input id="cantcapitulos" name="cantcapitulos" type="text" value="<%= cantcapitulos %>" >
+        <span class="help-inline"></span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="productora" class="control-label">casa productora:</label>
+
+    <div class="controls">
+      <input type="text" class="input-large" id="productora" name="productora" 
+          placeholder='casa productora' value="<%= productora %>"/>
+      <span class="help-inline"></span>
+    </div>
+</div>
+
+<div class="row status-bar">
+    <div class="col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>INFO:</b> El registro se guardó exitosamente
+        </div>
+    </div>
+</div>
+</form>

@@ -1,0 +1,68 @@
+  <div class="form-group">
+    <label for="trequerim" class="col-sm-2 control-label"  >Tipo requerimiento</label>
+    <div class="col-sm-3">
+        <select class="form-control input-sm" id="trequerim" name="trequerim" value="<%= trequerim %>">
+            <%= utils.buildSelectOptions('trequerim',utils.tiporequerimOptionList, trequerim) %>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <select class="form-control input-sm" id="requeridopor" name="requeridopor" value="<%= requeridopor %>">
+            <%= utils.buildSelectOptions('requeridopor',utils.requeridoporOptionList, requeridopor) %>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <select class="form-control input-sm" id="acargode" name="acargode" value="<%= acargode %>">
+            <%= utils.buildSelectOptions('acargode',utils.acargodeOptionList, acargode) %>
+        </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="itemaprob" class="col-sm-2 control-label"  >Estado de aprobación</label>
+    <div class="col-sm-3">
+        <select class="form-control input-sm" id="itemaprob" name="itemaprob" value="<%= itemaprob %>">
+            <%= utils.buildSelectOptions('itemaprob',utils.itemaprobOptionList, itemaprob) %>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <select class="form-control input-sm" id="itemaprobreq" name="itemaprobreq" value="<%= itemaprobreq %>">
+            <%= utils.buildSelectOptions('itemaprobreq',utils.itemaprobreqOptionList, itemaprobreq) %>
+        </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label"  >Descripción del Item</label>
+    <div class="col-sm-6">
+    <textarea id="description" name="description" type="textarea" 
+        class="form-control" rows='3' value="<%= description %>" ><%= description %></textarea>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="lugarfecha" class="col-sm-2 control-label"  >Lugar/ Fecha/ Observaciones</label>
+    <div class="col-sm-6">
+    <textarea id="lugarfecha" name="lugarfecha" type="textarea" 
+        class="form-control" rows='3' value="<%= lugarfecha %>" ><%= lugarfecha %></textarea>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="comentario" class="col-sm-2 control-label"  >Evaluación MCN</label>
+    <div class="col-sm-6">
+    <textarea id="comentario" name="comentario" type="textarea" 
+        class="form-control" rows='3' value="<%= comentario %>" ><%= comentario %></textarea>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="estado_alta" class="col-sm-2 control-label"  ></label>
+    <div class="col-sm-4 col-sm-offset-9">
+      <button type="button" class="btn btn-link form-control-static js-sitremove">Eliminar este item: 
+        <span class="glyphicon glyphicon-remove-circle"></span></button>
+    </div>
+  </div>

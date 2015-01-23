@@ -1,0 +1,23 @@
+<!--  ====================   SIDE-BAR ==========================  -->
+<div class="row">
+<div class="col-md-2">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Selectores</li>
+      <li><input type='text' placeholder='responsable' class='input-small' id='responsable' name='responsable' value=<%= responsable %> ></li>
+      <li><input type='text' placeholder='contraparte' class='input-small' id='contraparte' name='contraparte' value=<%= contraparte %> ></li>
+      <li><datalist id='ejecucionList'> 
+          </datalist>
+          <input type="text" class="input-small"  multiple list='ejecucionList' placeholder='nivel de ejecucion' id="nivel_ejecucion" name="nivel_ejecucion" value=<%= nivel_ejecucion %> ></li>
+    </ul>
+  </div><!--/.well side bar -->
+</div><!--/col-md-2 side bar-->
+
+<!-- START Content  tabs -->
+<div class="col-md-10">
+<div class="tabbable">
+        <div id="listcontent" class="row"></div>            
+</div> <!--  end TABABBLE -->
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

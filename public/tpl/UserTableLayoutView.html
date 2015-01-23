@@ -1,0 +1,56 @@
+<!--  ====================  ProductList LAYOUT SIDE-BAR ==========================  -->
+<div class="row">
+<!-- START selector column -->
+<div class="col-md-2">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Usuario Seleccionado</li>
+      <li>
+          <button id='mastevale' class='btn btn-default btn btn-default-block btn btn-default-link prselected'>
+            <%=
+                utils.selectedUsers.getSelectedLabel() 
+            %>
+          </button>
+      </li>
+      <li class="nav-header">Selectores</li>
+      <li><input type='text' placeholder='identificador' class='input-small' id='nickName' name='nickName' value=<%= nickName %>></li>
+      <li><input type='text' placeholder='tipo' class='input-small' id='tipopersona' name='tipopersona' value=<%= tipopersona %>></li>
+      <li><input type='text' placeholder='descriptor' class='input-small' id='taglist' name='taglist' value=<%= taglist %> ></li>
+    </ul>
+  </div><!--/.well side bar -->
+</div><!--/col-md-3 side bar-->
+<!-- START Content  tabs -->
+<div class="col-md-10">
+
+<!-- START head-row -->
+<div class="navbar " style="z-index: 10;">
+    <div class="navbar-inner">
+        
+        <div class="container">
+            <a class="btn btn-default navbar-btn btn-default" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar">1</span>
+                <span class="icon-bar">2</span>
+                <span class="icon-bar">3</span>
+            </a>
+
+            <a class="navbar-brand" href="#navegar/personas">Usuarios</a>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuevo<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#usuarios/add">Usuario</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav pull-right"></ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+</div>
+    <div id="listcontent" class="content row"></div>    	      
+</div><!--/col-md-10-->
+</div><!--row -->
+<hr>

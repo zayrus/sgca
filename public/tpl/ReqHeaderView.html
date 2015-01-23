@@ -1,0 +1,46 @@
+<div class="container">
+  <div class='row'>
+    <div class='col-md-6'>
+      <!--style="width: 180px;text-align: center;width:50%;margin: 0px auto;" -->
+      <p><img id="picture" src="img/logo-igualdad.gif"/></p>
+      <p><%= utils.viewData.emp.depart %><br/><%= utils.viewData.emp.division %><br/><%= utils.viewData.emp.address %></p>
+    </div>
+    <div class='col-md-5'>
+      <h3>Requisitoria Nro: <%= req.nro %></h3>
+      <h4>Fecha: <%= req.fesolstr %></h4>
+      <span style='font-size: 20px' >Contacto:</span>
+      <div style='margin: 0 0 0 15px;'>
+        <strong><%= req.solname %><br/><%= req.soldata %></strong>
+      </div>
+      <h4>Fecha necesidad: <%= req.fenecstr %></h4>
+    </div>
+  </div>
+  
+  <div class='row'>
+  <div class='col-md-6' style='border: solid 1px; margin:0px; padding:0px; text-align:center;'><strong>datos generales</strong></div>
+  <div class='col-md-5' 
+    style='border: solid 1px; margin:0px; padding:0px; text-align:center;'><strong>Proveedor</strong></div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-6' style='margin:5px; padding:5px; '>
+      <!--style="width: 180px;text-align: center;width:50%;margin: 0px auto;" -->
+      <p><strong>Evento: </strong><%= prj.denom %></p>
+      <p><strong>Lugar: </strong><%= prj.city %></p>
+      <p><strong>Condiciones generales: </strong><%= req.gencond %></p>
+      <p><strong>Condiciones particulares: </strong><%= req.partcond %></p>
+    </div>
+    <div class='col-md-5' style='margin:5px; padding:5px; '>
+      <p><strong><%= req.provname %></strong></p>
+      <p><strong><%= req.provdata %></strong></p>
+    </div>
+  </div>
+
+  <div class='row'>
+  <div class='col-md-6' style='border: solid 1px; margin:0px; padding:0px; text-align:center;'><strong>r e n g l o n</strong></div>
+  <div class='col-md-5' 
+    style='border: solid 1px; margin:0px; padding:0px; text-align:center;'><strong>c a n t i d a d </strong></div>
+  </div>
+
+
+</div>

@@ -1,0 +1,55 @@
+<!-- div class="front-card floatFix" style="width:838px;margin:auto;margin-top:70px;padding:20px;"  -->
+<!--div  style="background-image:url('/css/img/bg.jpg');background-size: cover;background-repeat: no-repeat;margin-top:-12px;padding:160px"  -->
+
+
+        <!-- div class="remember-forgot navbar-brand">Ingreso a la intranet del MCN</div   -->
+
+<div  style="background-image:url('/background/img');background-size:cover;-webkit-background-size: cover;-o-background-size: cover;background-repeat: no-repeat;margin: -19px 0px 0px 25px; padding: 80px 120px 160px 120px; height: 500px;">
+
+
+  <div class="user-options">
+    <div class="front-signin front-card ">
+
+    <form  role='form' action="/login" method="post">
+
+        <div class="form-group">
+        <label class="sr-only" for="username">Código de usuario utilizando su mail registrado</label>
+        <div class='row'>
+          <div class="col-sm-12">
+              <input type="text" class="form-control" id="username" name='username'
+                placeholder="mail registrado" value="<%= username %>" >
+          </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <label class="sr-only" for="password">clave de acceso</label>
+        <div class='row'>
+          <div class="col-sm-8">
+              <input type='password' name='password' value='<%= password %>' class="form-control" placeholder='clave'>
+
+          </div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-primary js-login-submit">
+                Ingresar
+              </button>
+            </div>
+        </div>
+        </div>
+
+  </form>
+
+        <div class="remember-forgot">
+          <label class="remember">
+            <input type="checkbox" value="1" name="remember_me" checked="checked">
+            <span>Recordar mis datos</span>
+          </label>
+            <button type="button" class="btn btn-default btn btn-default-link pull-right js-newUser" >Registrarse</button>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</div>

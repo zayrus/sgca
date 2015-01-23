@@ -1,0 +1,35 @@
+<!--Container box -->
+<!-- div id="nuevo-req-form" style="display:none;" class="col-xs-12 col-md-12 sistema-box"></div> -->
+<h5>Requerimiento</h5>
+<div class="form-group">
+  <div class="row">
+    <div class="col-sm-6">
+      <label class="control-label">Tipo de requerimiento</label>
+      <select class="form-control" name="trequerim">
+        <%= utils.buildSelectOptions('trequerim',utils.tiporequerimOptionList, trequerim) %>
+      </select>
+    </div>
+    <div class="col-sm-6">
+      <label class="control-label">A cargo de</label>
+      <select class="form-control" name="acargode">
+        <%= utils.buildSelectOptions('acargode',utils.acargodeOptionList, acargode) %>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="row">
+    <div class="form-group col-sm-12">
+      <label class="control-label">Descripción del recurso solicitado
+      </label>
+      <textarea class="form-control" name="description" rows="4"></textarea>
+    </div>
+    <div class="form-group col-sm-12">
+      <label class="control-label">Fecha, hora y lugar del recurso solicitado</label>
+      <textarea class="form-control" name="lugarfecha" rows="2"></textarea>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary js-newSolDetail">Confirmar requerimiento
+</button>
+<br><br>

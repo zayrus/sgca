@@ -1,0 +1,6 @@
+<td><%= product %></td><td><%= pslug %></td><td><% for (var emi in emisiones){ %>
+                   <strong><%= utils.dayweek[emisiones[emi].dayweek] %>: </strong><%= emisiones[emi].hourmain %> <%= emisiones[emi].chapter %> <%= emisiones[emi].repite ? 'Repite: '+ emisiones[emi].repite : '' %> <%= emisiones[emi].comentario ? '['+ emisiones[emi].comentario +']': '' %> |
+   <% }%></td>
+
+
+

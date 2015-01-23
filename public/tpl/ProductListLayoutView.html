@@ -1,0 +1,92 @@
+<!--  ====================  ProductList LAYOUT SIDE-BAR ==========================  -->
+<div class="row row-offcanvas row-offcanvas-left">
+<!-- START selector column -->
+    <div class="col-md-3">
+          <div class="panel panel-default">
+              <div class='panel-heading'>Producto seleccionado</div>
+                  <ul class="list-group">
+                      <li class="list-group-item"><button id='mastevale' class='btn btn-default btn btn-default-block btn btn-default-link prselected'><%= utils.selectedProducts.getSelectedLabel() %></button></li>
+                  </ul>
+              <div class='panel-heading'>Procedencia seleccionado</div>
+                   <ul class="list-group">
+                       <li class="list-group-item"><button class='btn btn-default btn btn-default-block btn btn-default-link prjview'><%= utils.viewData.currentProject %></button></li>
+                       <input type='hidden' placeholder='proyecto' disabled class='input-small' id='project[_id]' name='project[_id]' value=<%= project['_id'] %> >
+                   </ul>
+            </div>
+            <div class="panel panel-default">
+                <div class='panel-heading'>Selectores</div>
+                <ul class="nav nav-list">
+                    <li class="list-group-item"><input type='text' placeholder='codigo' class='input-small' id='productcode' name='productcode' value=<%= productcode %> ></li>
+                    <li class="list-group-item"><input type='text' placeholder='tipo' class='input-small' id='tipoproducto' name='tipoproducto' value=<%= tipoproducto %> ></li>
+                    <li class="list-group-item"><input type='text' placeholder='contenido' class='input-small' id='contentTagList' name='contentTagList' value=<%= contentTagList %> ></li>
+                    <li class="list-group-item"><input type='text' placeholder='descriptor' class='input-small' id='descripTagList' name='descripTagList' value=<%= descripTagList %> ></li>
+                    <li class="list-group-item"><datalist id='ejecucionList'><%= utils.buildDatalistOptions('nivel_ejecucion',utils.estadoaltaOptionList) %></datalist>
+                    <input type="text" class="input-small"  multiple list='ejecucionList' placeholder='estado de alta' id="estado_alta" name="estado_alta" value=<%= estado_alta %> ></li>
+                    <li class="list-group-item"><datalist id='nivelimportancia'><%= utils.buildDatalistOptions('nivel_importancia',utils.nivelimportanciaOptionList) %></datalist>
+                    <input type="text" class="input-small"  multiple list='nivelimportancia' placeholder='nivel de importancia' id="nivel_importancia" name="nivel_importancia" value=<%= nivel_importancia %> ></li>
+
+                    <li class="list-group-item">Filtro por pendientes</li>
+                    <li  class="list-group-item">Pendiente
+                        <select class="form-control" id="pendiente" name="pendiente" 
+                            value="<%= pendiente %>">
+                            <%= utils.buildSelectOptions('pendiente<',utils.papendingsOptionList, pendiente) %>
+                        </select>
+                    </li>
+                    <li  class="list-group-item" >Prioridad
+                        <select class="form-control" id="prioridad" name="prioridad" 
+                                value="<%= prioridad %>">
+                                <%= utils.buildSelectOptions('prioridad',utils.urgenciaOptionList, prioridad) %>
+                        </select>
+                    </li>
+
+                </ul>
+          </div>
+    </div>
+<!-- START Content  tabs -->
+<div class="col-md-9">
+<!-- START head-row -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainmenu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#navegar/productos">Productos</a>
+    </div>
+            <div id='mainmenu' class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acciones<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class='selproduct' ><span class="glyphicon glyphicon-edit"></span>seleccionar producto</a></li>
+                            <li><a class='dselproduct' ><span class="glyphicon glyphicon-edit"></span>deseleccionar producto</a></li>
+                            <li><a class='dselproject' ><span class="glyphicon glyphicon-edit"></span>deseleccionar proyecto</a></li>
+                            <li class="divider"></li>
+                            <li><a class='addchapters' ><span class="glyphicon glyphicon-edit"></span>vincular capítulos</a></li>
+                            <li><a class='addassociated' ><span class="glyphicon glyphicon-edit"></span>vincular catálogo</a></li>
+                            <li><a class='buildtree' ><span class="glyphicon glyphicon-edit"></span>ver grafo</a></li>
+                            <li><a class='showmedia' ><span class="glyphicon glyphicon-edit"></span>visualizar</a></li>
+                            <li class="divider"></li>
+                            <li><a class='btn btn-default btn btn-default-link managetable'>seleccionar columnas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuevo<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#productos/add">Producto</a></li>
+                            <li><a href="#proyectos/add">Procedencia</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+    </div>
+</nav>
+
+
+  <div id="listcontent" class="content row"></div>    	      
+</div><!--/col-md-9-->
+</div><!--row-fluid -->
+<hr>

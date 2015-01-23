@@ -1,0 +1,80 @@
+<h4>Descripción del evento cultural</h4>
+<p>¡Bienvenido! En este primer paso lo invitamos a <strong>describir el evento o proyecto cultural</strong> para el que se quiere solicitar la participación del Ministerio de Cultura. Se asume que se trata de un evento significativo para su jurisdicción.</p>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-sm-8">
+      <label class="control-label">Denominación del evento</label>
+      <input type="text" class="form-control" name="slug" value='<%= slug %>'>
+    </div>
+    <div class="col-sm-4 selectContainer">
+      <label class="control-label">Tipo de evento</label>
+      <select class="form-control" name="tipo_evento">
+        <%= utils.buildSelectOptions('proevento',utils.tipofiestaOptionList, tipo_evento) %>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-sm-4 selectContainer">
+      <label class="control-label">Provincia</label>
+      <select class="form-control" id="proevento" name="provevento">
+        <%= utils.buildSelectOptions('proevento',utils.provinciasOptionList.Argentina, provevento) %>
+      </select>
+    </div>    
+    <div class="col-sm-6">
+        <label class="control-label">Localidad</label>
+        <input type="text" class="form-control" id="locevento" name="locevento" 
+                value="<%= locevento %>" >
+    </div>
+
+    <div class="col-sm-2">
+        <label class="control-label">CP</label>
+        <input type="text" class="form-control" name="cpevento"
+                value="<%= cpevento %>"  >
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label">Descripción del evento</label>
+    <textarea class="form-control" name="devento" rows="10"><%= devento %></textarea>
+</div>
+
+<div class="row col-sm-12">
+  <div class="form-group well-transparent bg-info col-sm-6">
+    <div class="row">
+      <div class='col-sm-12'>
+        <label class="control-label">Fecha y hora del evento</label>
+        <div class='input-group'>
+          <input type='text' class="form-control js-datepicker" id='fevento' name="fevento" 
+                  value="<%= fevento %>" >
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+          </span>
+        </div>
+      </div>
+      <div class='col-sm-12'>
+        <label class="control-label">Texto descriptivo de la fecha y horario seleccionada</label>
+        <textarea class="form-control" name="leyendafecha" rows="4"><%= leyendafecha %></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="form-group col-sm-5 col-sm-push-1">
+    <div class="row">
+      <label class="control-label">Lugar donde se realizará el evento
+      </label>
+      <textarea class="form-control" name="lugar" rows="4"
+      value="<%= lugar %>"><%= lugar %>
+      </textarea>
+    </div>
+  </div>
+  <div class="form-group col-sm-5 col-sm-push-1">
+    <div class="row">
+      <label class="control-label">¿El evento es al aire libre?</label>
+      <input type="checkbox" name="airelibre" id="airelibre" checked>
+    </div>
+  </div>
+</div>

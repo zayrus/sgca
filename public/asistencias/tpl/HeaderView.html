@@ -1,0 +1,66 @@
+    <header>
+      <div class="mainnav navbar navbar-default navbar-fixed-top micultura">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="/img/logo-cultura-nacion.png" class="img-responsive">
+                </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <% if(displayName) { %>
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span><%= displayName %> <i class="caret"></i></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header bg-mcn-blue">
+                        <img src="/css/img/avatar1.png" class="img-circle" alt="User Image" />
+                        <p>
+                            <%= name %>
+                            <small>Miembro desde Nov. 2014</small>
+                        </p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <div class="pull-left">
+                            <a href="#perfil" class="btn btn-default btn-flat">Perfil</a>
+                        </div>
+                        <div class="pull-right">
+                            <a href="/logout" class="btn btn-default btn-flat">Salir</a>
+                        </div>
+                    </li>
+                </ul>
+              </li>
+              <% } %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+      <div>  
+          <nav class="subnav navbar navbar-collapse2" role="navigation">
+            <div class="container">
+              <div class="navbar-header row">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse2">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="menu">
+
+              <ul id='taskmenu'></ul>
+
+
+            </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+    </header>

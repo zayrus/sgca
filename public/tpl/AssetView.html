@@ -1,0 +1,83 @@
+<div class="row">
+
+    <form class="form-horizontal col-md-12">
+        <!-- form-horizontal form-inLine div: container vs. row -->
+        <fieldset>
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div class="form-group">
+                        <label for="assetId" class="control-label">Id:</label>
+
+                        <div class="controls">
+                            <input id="assetId" name="id" type="text" value="<%= _id === null ? '' : _id %>" disabled/>
+
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="slug" class="control-label">Denom corta:</label>
+
+                        <div class="controls">
+
+                            <input type="text" class="input-large" id="slug" name="slug" placeholder='Descripcion corta' value="<%= slug %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="denom" class="control-label">Denominacion:</label>
+
+                        <div class="controls">
+                            <input type="text" class="input-large" id="denom" name="denom" placeholder='Descripcion' value="<%= denom %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-offset-1">
+                        <h4><a href="<%= urlpath %>">Descargar la version actual</a></h4>
+                    </div>
+
+                    <div class="col-md-offset-1">
+                        <h4>Versiones</h4>
+                        <ul id='versionslist' class="thumbnails col-md-6"> </ul>
+                    </div>
+                </div>
+                <!-- Fin de col-md-8 -->
+
+                <div class="col-md-4">
+                    <div class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+                        <p><img id="picture" name='uploadfile' width="180" src="pics/ass-update.png"/>
+                        </p>
+                        <p id='uploaded'></p>
+                        <div class="progress">
+                            <div id='uplprogressbar' class="bar" style="width: 0%;"></div>
+                        </div> 
+
+                    </div>
+                    <div class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+                        <a href="#"  class="btn btn-default btn btn-default-block btn btn-default-primary addresources">Archivo nuevo</a>
+                    </div>
+ 
+                </div>
+
+            </div>
+
+        </fieldset>
+        <div class="form-actions col-md-7">
+            <a href="#" class="btn btn-default btn btn-default-primary save">Guardar</a>
+            <a href="#" class="btn btn-default btn btn-default-danger delete">Eliminar</a>
+        </div>
+
+    </form>
+
+</div>
+
+<div class="row status-bar">
+    <div class="col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>INFO:</b> El Archivo se guardó exitosamente
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="splash-container">
+	<div class="space150"></div>
+	
+	<h3><%= volanta %></volanta></h3>	
+	<div class="row-centered">
+		<h1><%= titulo %></h1>
+	</div>
+
+	<h4><%= slug %></h4>
+	<div class="space50"></div>
+	
+	<div class="container">
+		<div class="row-centered">
+			<div class="col-md-6 col-xs-12 col-centered login-box well" name="login-box">
+				<!--BEG LOGIN-->
+				<div id="loginbox" name="loginbox" class="mainbox col-md-12 hide">
+					<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+					<form id="loginform" class="form-horizontal" role="form" action="/login" method="post">
+						<div class="form-group input-group"> 
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="usuario o email" />
+						</div>
+						<div class="form-group input-group"> 
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							<input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña" />
+						</div>
+
+						<div class="form-group"> 
+							<!-- Button -->
+							<input type="submit" class="btn btn-primary btn-block" value="Entrar"></input>
+						</div><hr>
+						<div class="form-group">
+							<div class="pull-left small js-forgot"><a href="#">Recuperar contraseña</a></div>
+							<div class="btn btn-success pull-right" id="goto-register">¿Aún no tenés cuenta? REGISTRATE</div>
+						</div>
+					</form>
+				</div>
+				<!--END LOGIN-->
+				<!--BEG FORGOT-->
+				<div id="forgotbox" name="forgotbox" class="mainbox col-md-12 hide">
+					<form id="forgotform" class="form-horizontal" role="form" action="/forgot" method="post">
+						<div class="form-group input-group"> 
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="login-username" type="text" class="form-control" name="forgotpass" value="" placeholder="introduzca email" />
+						</div>
+						<div class="form-group"> 
+							<input type="submit" class="btn btn-primary btn-block js-fgsubmit" value="Recuperar Contraseña"></input>
+						</div><hr>
+					</form>
+				</div>
+				<!--END FORGOT-->
+				<!--BEG SIGNUP-->
+				<div id="signupbox" name="signupbox" class="mainbox col-md-12 hide">
+					<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+					<form id="signupform" class="form-horizontal" role="form">
+						<div class="form-group input-group"> 
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+							<input type="text" class="form-control" id="username" name="username" placeholder="Ingresá tu cuenta de email" />
+						</div>
+						<div class="form-group"> 
+							<input class="form-control" id="name" name="name" placeholder="Ingresá tu nombre" />
+						</div>
+						<div class="form-group"> 
+							<input class="form-control" id="apellido" name="apellido" placeholder="Ingresá tu apellido" />
+						</div>
+						<div class="form-group input-group"> 
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							<input id="login-password" type="password" class="form-control" id="password" name="password" placeholder="contraseña" />
+						</div>
+						<div class="form-group"> 
+							<!-- Button -->
+							<button class="btn btn-success btn-block js-insertuser">Registrate</button>
+						</div>
+						<hr>
+						<div class="pull-right small"><a id="signinlink" href="#">¿Ya estás registrado?</a></div>
+					</form>
+				</div>
+				<!--END SIGNUP-->
+				<a href='#' id="ins-but" role="button" class="btn btn-block strong btn-xl show js-ins-but"><%= items[0].buttontext %></a>
+			</div>
+		</div>
+	</div>  
+	<div class="space150"></div>
+</div>

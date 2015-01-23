@@ -1,0 +1,19 @@
+<div class="row well">
+	<div class="row">
+		<div class="col-xs-12 col-md-4" >
+			<h4><%= utils.fetchLabel(utils.tipoActionEntityList, tregistro) %>: <%= cnumber %><a href="#acciones/<%= _id %>/edit" class="btn btn-sm js-edit">
+				<span class='glyphicon glyphicon-edit'></span></a></h4>
+			
+			<p><%= lugarfecha%></p>
+			<p>Expediente: <%= expediente %></p>
+			<p>Alta: <%= fecomp %></p>
+
+		</div>
+		<div class="col-xs-12 col-md-8" >
+			<h3><span class=" pull-right"></span><%= slug %></h3>
+			<p><strong>  <%= utils.fetchLabel(utils.tipoActionIniciativeList, taccion) %></strong></p>
+			<p><span class=" pull-right"></span><%= nodo %> / <%= area %></p>
+			<p><span class=" pull-right"></span><%= requirente %></p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,182 @@
+  <div class="form-group">
+    <label for="slug" class="col-sm-2 control-label"  >Parte técnico</label>
+    <div class="col-sm-7">
+    <input id="slug" name="slug" type="text" class="form-control input-sm" 
+          value="<%= slug %>" >
+      <span class="help-block"></span>
+    </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="estado_qc" name="estado_qc" value="<%= estado_qc %>">
+            <%= utils.buildSelectOptions('estado_qc',utils.estadoqcOptionList, estado_qc) %>
+          </select>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="fept" class="col-sm-2 control-label" >fecha/ rev</label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="fept" name="fept" type="datetime-local" class="form-control js-datepicker" 
+           value="<%= fept %>" placeholder="Fecha dd/mm/aaaa">
+      </div>
+      <div class="col-sm-1">
+         <input id="revision" name="revision" type="number" class="form-control" 
+           value="<%= revision %>" placeholder="revisión">
+      </div>
+      <div class="input-group col-sm-4">
+        <span class="input-group-addon">@</span>
+          <input id="product" name="product" type="text" class="form-control" 
+            value="<%= product %>"  placeholder="instancia producto audiovisual">
+        <span class="input-group-btn"><button class="btn btn-default js-productsch" type="button">Buscar</button></span>
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="persona" class="col-sm-2 control-label"  >entregado por</label>
+    <div class='row'>
+      <div class="input-group col-sm-4">
+        <span class="input-group-addon">@</span>
+        <input id="persona" name="persona" type="text" class="form-control" 
+            value="<%= persona %>"  placeholder="casa productora">
+        <span class="input-group-btn"><button class="btn btn-default js-personsch" type="button">Buscar</button></span>
+      </div>
+      <div class="col-sm-5">
+          <select class="form-control input-sm" id="sopoentrega" name="sopoentrega" value="<%= sopoentrega %>">
+            <%= utils.buildSelectOptions('sopoentrega',utils.sopentregaOptionList, sopoentrega) %>
+          </select>
+      <span class="help-block"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='row'>
+    <label for="estado_alta" class="col-sm-2 control-label"  >Video</label>
+      <div class="col-sm-3">
+         <input id="vbloques" name="vbloques" type="number" class="form-control input-sm" 
+           value="<%= vbloques %>" placeholder="cantidad de bloques">
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="resolucion" name="resolucion" value="<%= resolucion %>">
+            <%= utils.buildSelectOptions('resolucion',utils.resolucionOptionList, resolucion) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="framerate" name="framerate" value="<%= framerate %>">
+            <%= utils.buildSelectOptions('framerate',utils.framerateOptionList, framerate) %>
+          </select>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="col-sm-3 col-sm-offset-2">
+          <select class="form-control input-sm" id="aspectratio" name="aspectratio" value="<%= aspectratio %>">
+            <%= utils.buildSelectOptions('aspectratio',utils.aspectratioOptionList, aspectratio) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="rolinstancia" name="rolinstancia" value="<%= rolinstancia %>">
+            <%= utils.buildSelectOptions('rolinstancia',utils.rolinstanciasOptionList, rolinstancia) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="formatoorig" name="formatoorig" value="<%= formatoorig %>">
+            <%= utils.buildSelectOptions('formatoorig',utils.formatooriginalOptionList, formatoorig) %>
+          </select>
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='row'>
+    <label for="estado_alta" class="col-sm-2 control-label"  >Audio-C1 </label>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au1_content" name="au1_content" value="<%= au1_content %>">
+            <%= utils.buildSelectOptions('au1_content',utils.audiocontentOptionList, au1_content) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au1_channel" name="au1_channel" value="<%= au1_channel %>">
+            <%= utils.buildSelectOptions('au1_channel',utils.audiocanalOptionList, au1_channel) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+         <input id="au1_piclevel" name="au1_piclevel" type="text" class="form-control input-sm" 
+           value="<%= au1_piclevel %>" placeholder="nivel pico (dB FS)">
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='row'>
+    <label for="estado_alta" class="col-sm-2 control-label"  >Audio-C2 </label>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au2_content" name="au2_content" value="<%= au2_content %>">
+            <%= utils.buildSelectOptions('au2_content',utils.audiocontentOptionList, au2_content) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au2_channel" name="au2_channel" value="<%= au2_channel %>">
+            <%= utils.buildSelectOptions('au2_channel',utils.audiocanalOptionList, au2_channel) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+         <input id="au2_piclevel" name="au2_piclevel" type="text" class="form-control input-sm" 
+           value="<%= au2_piclevel %>" placeholder="nivel pico (dB FS)">
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='row'>
+    <label for="estado_alta" class="col-sm-2 control-label"  >Audio-C3 </label>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au3_content" name="au3_content" value="<%= au3_content %>">
+            <%= utils.buildSelectOptions('au3_content',utils.audiocontentOptionList, au3_content) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au3_channel" name="au3_channel" value="<%= au3_channel %>">
+            <%= utils.buildSelectOptions('au3_channel',utils.audiocanalOptionList, au3_channel) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+         <input id="au3_piclevel" name="au3_piclevel" type="text" class="form-control input-sm" 
+           value="<%= au3_piclevel %>" placeholder="nivel pico (dB FS)">
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='row'>
+    <label for="estado_alta" class="col-sm-2 control-label"  >Audio-C4 </label>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au4_content" name="au4_content" value="<%= au4_content %>">
+            <%= utils.buildSelectOptions('au4_content',utils.audiocontentOptionList, au4_content) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+          <select class="form-control input-sm" id="au4_channel" name="au4_channel" value="<%= au4_channel %>">
+            <%= utils.buildSelectOptions('au4_channel',utils.audiocanalOptionList, au4_channel) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+         <input id="au4_piclevel" name="au4_piclevel" type="text" class="form-control input-sm" 
+           value="<%= au4_piclevel %>" placeholder="nivel pico (dB FS)">
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label"  >observaciones</label>
+    <div class="col-sm-10">
+    <textarea id="description" name="description" type="textarea" 
+      class="form-control input-sm" rows="3"><%= description %></textarea>
+      <span class="help-block"></span>
+     </div>
+  </div>
+  <hr>

@@ -1,0 +1,172 @@
+<!-- //tipo de evento
+descripción evento
+fecha evento
+Lugar evento
+Aire libre s/n
+Provincia
+Localidadd
+cp
+-----
+Nombre referente
+email
+Tel
+
+Nombre refe técnico
+email
+tel
+-->
+<!-- //datos backstage MCN
+Área asignada
+Responsable asignado
+Mail responsable
+Tel resonsable
+----
+Estado de avance
+Estado de aprobación
+Nivel de criticidad
+Resolución
+-->
+  <div class="form-group">
+    <label for="devento" class="col-sm-2 control-label"  >Descripción del Evento</label>
+    <div class="col-sm-5">
+    <textarea id="devento" name="devento" type="textarea" 
+        class="form-control" rows='3' value="<%= devento %>" ><%= devento %></textarea>
+      <span class="help-block"></span>
+    </div>
+      <div class="col-sm-3">
+          <select class="form-control" id="tipo_evento" name="tipo_evento" value="<%= tipo_evento %>">
+            <%= utils.buildSelectOptions('tipo_evento',utils.tipofiestaOptionList, tipo_evento) %>
+          </select>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="fevento" class="col-sm-2 control-label" >Fecha evento </label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="fevento" name="fevento" type="datetime-local" class="form-control js-datepicker" 
+           value="<%= fevento %>" placeholder="Fecha dd/mm/aaaa">
+      </div>
+      <div class="col-sm-4">
+         <input id="leyendafecha" name="leyendafecha" type="text" class="form-control" 
+           value="<%= leyendafecha %>" placeholder="detalle fecha">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lugar" class="col-sm-2 control-label" >Lugar evento </label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="lugar" name="lugar" type="text" class="form-control" 
+           value="<%= lugar %>" placeholder="lugar del evento">
+      </div>
+      <div class="col-sm-4">
+         <input id="airelibre" name="airelibre" type="text" class="form-control" 
+           value="<%= airelibre %>" placeholder="es al aire libre (s/n)">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="provevento" class="col-sm-2 control-label" >Localidad </label>
+    <div class='row'>
+      <div class="col-sm-3">
+          <select class="form-control" id="provevento" name="provevento" value="<%= provevento %>">
+            <%= utils.buildSelectOptions('provevento',utils.provinciasOptionList['Argentina'], provevento) %>
+          </select>
+      </div>
+      <div class="col-sm-3">
+         <input id="locevento" name="locevento" type="text" class="form-control" 
+           value="<%= locevento %>" placeholder="localidad del evento">
+      </div>
+      <div class="col-sm-2">
+         <input id="cpevento" name="cpevento" type="text" class="form-control" 
+           value="<%= cpevento %>" placeholder="código postal">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="nsolicitante" class="col-sm-2 control-label" >Datos de contacto </label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="nsolicitante" name="nsolicitante" type="text" class="form-control" 
+           value="<%= nsolicitante %>" placeholder="nombre y apellido solicitante">
+      </div>
+      <div class="col-sm-3">
+         <input id="tsolicitante" name="tsolicitante" type="text" class="form-control" 
+           value="<%= tsolicitante %>" placeholder="teléfono contacto (area)-nro">
+      </div>
+      <div class="col-sm-3">
+         <input id="esolicitante" name="esolicitante" type="text" class="form-control" 
+           value="<%= esolicitante %>" placeholder="email solicitante">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="ntecnico" class="col-sm-2 control-label" >Datos de contacto técnico </label>
+    <div class='row'>
+      <div class="col-sm-3">
+         <input id="ntecnico" name="ntecnico" type="text" class="form-control" 
+           value="<%= ntecnico %>" placeholder="nombre y apellido tecnico">
+      </div>
+      <div class="col-sm-3">
+         <input id="ttecnico" name="ttecnico" type="text" class="form-control" 
+           value="<%= ttecnico %>" placeholder="teléfono contacto (area)-nro">
+      </div>
+      <div class="col-sm-3">
+         <input id="etecnico" name="etecnico" type="text" class="form-control" 
+           value="<%= etecnico %>" placeholder="email tecnico">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="aasignada" class="col-sm-2 control-label" >Responsables </label>
+    <div class='row'>
+      <div class="col-sm-2">
+         <input id="aasignada" name="aasignada" type="text" class="form-control" 
+           value="<%= aasignada %>" placeholder="Area asignada">
+      </div>
+      <div class="col-sm-2">
+         <input id="rasignado" name="rasignado" type="text" class="form-control" 
+           value="<%= rasignado %>" placeholder="Nombre responsable asignado">
+      </div>
+      <div class="col-sm-3">
+         <input id="rmail" name="rmail" type="text" class="form-control" 
+           value="<%= rmail %>" placeholder="email del responsable">
+      </div>
+         <div class="col-sm-2">
+         <input id="rtelef" name="rtelef" type="text" class="form-control" 
+           value="<%= rtelef %>" placeholder="tel del responsable">
+      </div>
+    </div>
+  </div>
+      
+    <div class="form-group">
+    <label for="eavance" class="col-sm-2 control-label" >Estado Solicitud </label>
+    <div class='row'>
+      <div class="col-sm-2">
+         <select class="form-control" id="eavance" name="eavance" value="<%= eavance %>">
+            <%= utils.buildSelectOptions('eavance',utils.estadoavanceOptionList, eavance) %>
+          </select>
+      </div>
+      <div class="col-sm-2">
+         <input id="eaprob" name="eaprob" type="text" class="form-control" 
+           value="<%= eaprob %>" placeholder="Estado aprobacion">
+      </div>
+      <div class="col-sm-3">
+         <input id="ncriti" name="ncriti" type="text" class="form-control" 
+           value="<%= ncriti %>" placeholder="Nivel criticidad">
+      </div>
+         <div class="col-sm-2">
+         <input id="resoluc" name="resoluc" type="text" class="form-control" 
+           value="<%= resoluc %>" placeholder="Resolucion">
+      </div>
+    </div>
+  </div>

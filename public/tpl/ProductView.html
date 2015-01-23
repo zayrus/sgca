@@ -1,0 +1,287 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainmenu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#navegar/productos">Productos</a>
+        </div>
+        <div id='mainmenu' class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acciones<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class='capitulos' ><i class="icon-check"></i> alta rápida capítulos</a></li>
+                            <li><a class='notas' ><i class="icon-check"></i> agregar nota</a></li>
+                            <li><a class='comprobante' ><i class="icon-check"></i> alta comprobante</a></li>
+                        </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nuevo<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#productos/add">Producto</a></li>
+                            <li><a href="#proyectos/add">Procedencia</a></li>
+                        </ul>
+                </li>
+            </ul>
+            
+            <ul class="nav navbar-nav pull-right">
+                <li><a class='eventos' >Eventos</a></li>
+                <li><a class='browse' >Navegar Productos</a></li>
+                <li class="dropdown">
+                    <a href="#" id="vistas" class="dropdown-toggle" data-toggle="dropdown">Vista<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class='vistacarousel' >Vista carousel</a></li>
+                            <li><a class='vistainfo'  >Vista info</a></li>
+                            <li><a class='vistamedia'  >Vista catalogación</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- form-PRODUCT   parent:  -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+       <form class="form-horizontal js-coreform" role'form'>
+           <div class="form-group">
+                 <div class="row">
+                    <div class="col-md-1">
+                        <label for="productId" class="control-label">id:</label>
+                     </div>
+                    <div class='col-md-10'>
+                        <input id="productId" name="id" type="text" value="<%= _id === null ? '' : _id %>" class='form-control' disabled/>
+                    </div>
+               </div>
+           </div>
+
+           <div class="form-group">
+               <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" id="tipoproducto" name="tipoproducto" value="<%= tipoproducto %>"><%= utils.buildSelectOptions('tipoproducto',utils.tipoproductoOptionList, tipoproducto) %>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <input id="productcode" name="productcode" type="text" value="<%= productcode === null ? '' : productcode %>"  class="form-control"disabled>
+                        <span class="help-inline"></span>
+                    </div>
+                </div>
+            </div>
+               
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- slug  / denom -->
+                        <label for="slug" class="control-label">Denominacion corta:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" "form-control" id="slug" name="slug" placeholder='denominación corta' value="<%= slug %>"/>
+                    </div>
+                </div>  
+           </div>
+               
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- slug  / denom -->
+                        <label for="slug" class="control-label">Titulo:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" "form-control" id="denom" name="denom" placeholder="título" value="<%= denom %>">
+                        <span class="help-inline"></span>
+                    </div>
+                </div>  
+           </div>
+
+          <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <!-- rubro  nivel_importancia estado_alta nivel_ejecucion -->
+                        <label for="rubro" class="control-label">Estados:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="estado_alta" name="estado_alta" value="<%= estado_alta %>">
+                        <%= utils.buildSelectOptions('nivel_importancia',utils.estadoaltaOptionList, estado_alta) %>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="nivel_importancia" name="nivel_importancia" 
+                        value="<%= nivel_importancia %>"><%=                                                                                    utils.buildSelectOptions('nivel_importancia',utils.paimportanciaOptionList, nivel_importancia) %>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="nivel_ejecucion" name="nivel_ejecucion" 
+                        value="<%= nivel_ejecucion %>">
+                        <%= utils.buildSelectOptions('nivel_ejecucion',utils.paexecutionOptionList, nivel_ejecucion) %>
+                        </select>
+                        <span class="help-inline"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form class="form-group col-md-12 facets">
+          <div class="accordion" id="accordion1">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle painstancia" data-toggle="collapse"  href="#collapseOne">
+                  <span class="badge progress-bar-warning">Alta</span> Nueva Instancia</a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner painstanciahook"></div>
+                <div id='instanceuploaded' class='col-md-offset-2'></div>
+                <svg id='filesdrop' class='svgcontainer' width=540 height=160 >
+                     <rect x="2" y="5" rx="20" ry="20" width="520" height="150"
+                        style="fill:blue;stroke:black;stroke-width:3;fill-opacity:0.1;stroke-opacity:0.3"/>
+
+                    <text x=140   y=50   font-size=15 fill=3 fill-opacity=.5 font-family='Arvo' >arrastre y suelte los archivos aqui</text>
+                </svg>
+                <div class='col-md-offset-1'>
+                  <div class="instancedropped"></div> 
+                </div>
+                <div class="progress">
+                    <div id='instanceprogressbar' class="bar" style="width: 0%;">progress</div>
+                </div> 
+                <div class="form-actions">
+                  <a href="#" class="btn btn-info    uploadcontent">Subir contenido</a>
+                  <a href="#" class="btn btn-warning discardcontent">Descartar contenido</a>
+                  <a href="#" class="btn btn-primary addnewinstance">Alta nueva instancia</a>
+                  <a href="#" class="btn btn-warning cancelinstance">Cancelar</a>
+                </div>
+              </div>
+            </div>
+             <p></p>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle paclasif" data-toggle="collapse"  href="#collapseTwo">
+                  <span class="badge progress-bar-success">PA</span> Clasificación del contenido</a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse">
+                <div class="accordion-inner paclasifhook"></div>
+              </div>
+            </div>
+             <p></p>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle padatospro" data-toggle="collapse"  href="#collapseDP">
+                  <span class="badge progress-bar-success">PA</span> Datos de Producción</a>
+              </div>
+              <div id="collapseDP" class="accordion-body collapse">
+                <div class="accordion-inner padatosprohook"></div>
+              </div>
+            </div>
+             <p></p>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle parealiz" data-toggle="collapse" href="#collapseThree">
+                  <span class="badge progress-bar-success">PA</span> Datos de Realización y atribución intelectual</a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse">
+               <div class="accordion-inner parealizhook"></div>
+              </div>
+            </div>
+             <p></p>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle curaduria" data-toggle="collapse" href="#collapseCuraduria">
+                  <span class="badge progress-bar-success">PA</span> Curaduría</a>
+              </div>
+              <div id="collapseCuraduria" class="accordion-body collapse">
+               <div class="accordion-inner curaduriahook"></div>
+              </div>
+            </div>
+             <p></p>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle intechfacet" data-toggle="collapse" href="#collapseIND">
+                  <span class="badge progress-bar-success">INS</span> Datos de Instancia</a>
+              </div>
+              <div id="collapseIND" class="accordion-body collapse">
+               <div class="accordion-inner intechfacethook"></div>
+              </div>
+            </div>
+            <p></p>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle branding" data-toggle="collapse"  href="#collapseBrnd">
+                  <span class="badge progress-bar-warning">Alta</span> Material para Branding</a>
+              </div>
+              <div id="collapseBrnd" class="accordion-body collapse">
+                <div class="accordion-inner brandinghook"></div>
+                <div id='brndloaded' class='col-md-offset-2'></div>
+                <svg id='brnddrop' class='svgcontainer' width=540 height=160 >
+                     <rect x="2" y="5" rx="20" ry="20" width="520" height="150"
+                        style="fill:blue;stroke:black;stroke-width:3;fill-opacity:0.1;stroke-opacity:0.3"/>
+
+                    <text x=140   y=50   font-size=15 fill=3 fill-opacity=.5 font-family='Arvo' >arrastre y suelte los archivos aqui</text>
+                </svg>
+                <div class='col-md-offset-1'>
+                  <div class="brnddropped"></div> 
+                </div>
+                <div class="progress">
+                    <div id='brndprogressbar' class="bar" style="width: 0%;">progress</div>
+                </div> 
+                <div class="form-actions">
+                  <a href="#" class="btn btn-info    uploadbrnd">Subir contenido</a>
+                  <a href="#" class="btn btn-warning discardbrnd">Descartar contenido</a>
+                  <a href="#" class="btn btn-primary addnewbrnd">Alta nuevo branding</a>
+                  <a href="#" class="btn btn-warning cancelbrnd">Cancelar</a>
+                </div>
+              </div>
+            </div>
+
+          </div><!--   ends accordio1 -->
+
+          <div class="accordion" id="brandingaccordion"></div>
+
+
+           <br>
+          <div class="form-actions ">
+            <a href="#" class="btn btn btn-primary save">Guardar</a>
+            <a href="#" class="btn btn-danger delete">Eliminar</a>
+            <a href="#" class="btn btn-warning clone">Clonar</a>
+          </div>
+          <div class="row status-bar">
+              <div class="col-md-12">
+                  <div class="alert alert-success" style="display: none">
+                      <b>INFO:</b> El registro se guardó exitosamente
+                  </div>
+              </div>
+          </div>
+
+        </form>
+ 
+
+      </div><!--  main first col content span 8 -->
+
+
+        <div class="col-md-4"> <!--  main second col span 4 -->
+          <div  class="well" style="text-align: center;width:90%;">
+            <div class='nav-header'>Relacionados</div>
+            <div id="chapters1"></div>  
+          </div><!--/.well side bar -->
+          <div  class="well" style="text-align: center;width:90%;">
+            <div class='nav-header'>Ancestro</div>
+            <div id="ancestor1" class="nav nav-list"></div>
+          </div><!--/.well side bar -->
+          <div  class="well" style="text-align: center;width:90%;">
+            <div class='nav-header'>Assets</div>
+                <div id='assets1' class="accordion" id="assetaccordion"></div>
+          </div><!--/.well side bar -->
+          <div  class="well" style="text-align: center;width:90%;">
+            <div class='nav-header'>Notas</div>
+            <div id="notas1" class="nav nav-list"></div>
+          </div><!--/.well side bar -->
+          <div  class="well" style="text-align: center;width:90%;">
+            <div class='nav-header'>Comprobantes</div>
+            <div id="docum1" class="nav nav-list"></div>
+          </div><!--/.well side bar -->
+ 
+        </div><!--  sidebar right span 4 -->
+</div><!--  end master row  -->
+</div>
+
+

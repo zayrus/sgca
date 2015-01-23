@@ -1,0 +1,19 @@
+		<div class="col-xs-12 col-md-4" >
+			<h4><%= utils.fetchLabel(utils.tipoActionEntityList, tregistro) %>: <%= cnumber %></h4>
+			<p><span class=" pull-right"></span><%= nodo %> / <%= area %></p>
+			<p><span class=" pull-right"></span><%= requirente %></p>
+			
+			<p><%= lugarfecha%></p>
+			<%if(expediente){ %> <p><strong>Expediente: </strong>  <%= expediente %></p><%} %>
+			<p><strong>Alta: </strong><%= fecomp %></p>
+			<p><%= utils.fetchLabel(utils.actionEjecucionOptionList, nivel_ejecucion) %></p>
+			<%if(contraparte){ %> <p><strong>Contraparte: </strong>  <%= contraparte %></p><%} %>
+
+		</div>
+		<div class="col-xs-12 col-md-8" >
+			<h3><span class=" pull-right"></span><%= slug %></h3>
+			<p><strong>  <%= utils.fetchLabel(utils.tipoActionIniciativeList, taccion) %></strong></p>
+			<p><%= description %></p>
+			<%if(objetivo){ %> <p><strong>Objetivos: </strong>  <%= objetivo %></p><%} %>
+			<%if(metafisica){ %> <p><strong>Productos / resultados: <%= metafisica %></strong>  <%= metafisicaume %></p><%} %>
+		</div>

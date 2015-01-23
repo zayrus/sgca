@@ -1,0 +1,19 @@
+<div class="row well">
+	<div class="col-xs-6 col-sm-6" >
+		<div class='row'>
+		<div class="col-xs-12 col-sm-12" >
+			<p><strong>Medio de envío: </strong><%= utils.fetchLabel(utils.mediofisicoOptionList, mediofisico) %></p>
+			<p><strong><%= soporte_slug %> </strong>Nro. serie: <%= soporte_id %></p>
+		</div>
+		</div>
+	</div>
+	<div class="col-xs-6 col-sm-6" >
+		<div class='row'>
+		<span class='col-sm-12 pull-right'><h3><%= utils.fetchLabel(utils.tipomovqueryOptionList, tipomov) %></h3></span>
+		<span class='col-sm-12 pull-right'> <%= slug %></span>
+		<span class='col-sm-12 pull-right'><%= description %></span>
+		</div>
+	</div>
+</div>
+
+<hr>

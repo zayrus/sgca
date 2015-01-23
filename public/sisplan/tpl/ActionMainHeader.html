@@ -1,0 +1,33 @@
+<!--article id="sidebar-region" role="navigation" class="sistema-box" -->
+<div class="panel-heading">
+	<div class="caption"><%= slug %></div>
+</div>
+<div class="panel-body">
+	<div class='row'>
+		<div class="col-xs-12 col-md-12">
+			<p><strong><%= description %></strong></p>
+			<p><strong>Palabras claves:</strong>[<%= descriptores %>]</p>
+			<p><strong>Objetivo:</strong><br><%= objetivo %></p>
+			<hr>
+		</div>
+		<div class="col-xs-12 col-md-5">
+			<p><strong><%= utils.fetchLabel(utils.tipoActionEntityList, tregistro) %> <%= cnumber %>: </strong><%= fecomp %></p>
+			<p><%= utils.fetchLabel(utils.actionAreasOptionList, area) %> / <%= nodo %> </p>
+			<p><%= utils.fetchLabel(utils.tipoActionIniciativeList, taccion) %></p>
+			<p><%= lugarfecha %>; Fecha Hito:<%= feaccion %></p>
+			<hr>
+		</div>
+		<div class="col-xs-12 col-md-5">
+			<p>Estado de alta: <%= utils.fetchLabel(utils.actionAltaOptionList, estado_alta) %></p>
+			<p>Nivel de prioridad: <%= utils.fetchLabel(utils.actionEjecucionOptionList, nivel_ejecucion) %></p>
+			<p>Nivel de importancia: <%= utils.fetchLabel(utils.actionPrioridadOptionList, nivel_importancia) %></p>
+			<hr>
+		</div>
+		<div class="col-xs-12 col-md-2">
+		  <a href="#" class="others js-editMainHeader">
+		    <span class="glyphicon glyphicon-edit"></span>editar</a>		
+		</div>
+
+	</div>
+	<div class='row js-form-hook'></div>
+</div>

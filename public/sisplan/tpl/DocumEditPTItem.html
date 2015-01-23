@@ -1,0 +1,48 @@
+  <div class="form-group">
+    <label for="slug" class="col-sm-2 control-label"  >Caso/ severidad</label>
+    <div class="col-sm-7">
+        <select class="form-control input-sm" id="pticaso" name="pticaso" value="<%= pticaso %>">
+            <%= utils.buildSelectOptions('pticaso',utils.casosqcOptionList, pticaso) %>
+        </select>
+    </div>
+    <div class="col-sm-2">
+        <select class="form-control input-sm" id="ptiseveridad" name="ptiseveridad" value="<%= ptiseveridad %>">
+            <%= utils.buildSelectOptions('ptiseveridad',utils.severidadptOptionList, ptiseveridad) %>
+        </select>
+    </div>
+    <div class="col-sm-9 col-sm-offset-2">
+    <input id="ptidescription" name="ptidescription" type="text" class="form-control input-sm" 
+          value="<%= ptidescription %>" placeholder="descripción del hallazgo" >
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='row'>
+    <label for="estado_alta" class="col-sm-2 control-label"  >Localización</label>
+      <div class="col-sm-2">
+         <input id="ptitcbco" name="ptitcbco" type="number" class="form-control input-sm" 
+           value="<%= ptitcbco %>" placeholder="tc bacua">
+      </div>
+      <div class="col-sm-2">
+         <input id="ptiduracion" name="ptiduracion" type="number" class="form-control input-sm" 
+           value="<%= ptiduracion %>" placeholder="duración">
+      </div>
+      <div class="col-sm-2">
+        <select class="form-control input-sm" id="pticanal" name="pticanal" value="<%= pticanal %>">
+            <%= utils.buildSelectOptions('pticanal',utils.canalptOptionList, pticanal) %>
+        </select>
+      </div>
+      <div class="col-sm-2">
+         <input id="ptitcabs" name="ptitcabs" type="number" class="form-control input-sm" 
+           value="<%= ptitcabs %>" placeholder="tc abs">
+      </div>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="estado_alta" class="col-sm-2 control-label"  ></label>
+    <div class="col-sm-4 col-sm-offset-9">
+      <button type="button" class="btn btn-link form-control-static js-sitremove">Eliminar este item: 
+        <span class="glyphicon glyphicon-remove-circle"></span></button>
+    </div>
+  </div>

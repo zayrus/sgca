@@ -1,0 +1,62 @@
+              <div class="content">
+				      <h4>
+                           <text><%= slug %></text>
+                      </h4>   
+                          
+				    <!-- BEG BODY -->
+					<div class="content-body">
+                        <div class="req-row">Estado del trámite<span class="label label-<%= utils.fetchClass(utils.documexecutionOptionList, nivel_ejecucion) %>">
+                              <text><%= utils.fetchLabel(utils.documexecutionOptionList, nivel_ejecucion) %></text></span>
+ 
+                        </div>
+                        <!--Solo Usuarios MCN -->
+					</div>
+					<hr>
+                          
+					<div class="content-body">
+					     <p>
+					      	<span class="glyphicon glyphicon-calendar"></span>
+                             <text><%= items[0].fevento %></text>
+					     </p>
+					<p><span class="glyphicon glyphicon-map-marker"></span> 
+                        <text><%= items[0].lugar %></text>
+                    </p>
+					</div>
+                    <!-- END BODY -->
+				    <hr>
+                          
+				    <!-- BEG BOTTOM -->
+				    <div class="well transparent">
+					     <h5>Lista de requerimientos y solicitudes</h5>
+					<!--BEG TABLA DE REQUERIMIENTOS-->
+						<table id="example" class="table" cellspacing="0">
+						<% 
+					     	subitems = items[0].items;
+							if(subitems){
+					     		_.each(subitems, function(sitem){
+					     			var fecha = sitem.lugarfecha || items[0].fevento 
+					     			var acepmcn = 
+					     %>
+  <tr>
+      <td>	      
+	      <div><strong><text><%= utils.fetchLabel(utils.tiporequerimOptionList, sitem.trequerim) + ":  " + fecha %></text></strong></div>
+	      <div class="clearfix">
+                <text><%= sitem.description %></text>
+          </div>
+	      <div><strong><text>A cargo de: </text></strong><span class="pull-right label label-info"><%= utils.fetchLabel(utils.acargodeOptionList, sitem.acargode) %></span></div>
+	      <div><text>Aceptación MCN: </text><span class="pull-right label label-<%= utils.fetchClass(utils.itemaprobOptionList, sitem.itemaprob) %>"><%= utils.fetchLabel(utils.itemaprobOptionList, sitem.itemaprob) %></span></div>
+	      <div><text>Aceptación Requirente: </text><span class="pull-right label label-<%= utils.fetchClass(utils.itemaprobreqOptionList, sitem.itemaprobreq) %>"><%= utils.fetchLabel(utils.itemaprobreqOptionList, sitem.itemaprobreq) %></span></div>
+      </td>
+  </tr>
+						<% })} %>
+						</table>
+                          <!--END TABLA DE REQUERIMIENTOS-->
+                        
+			              <div class="spacer"><a href="/asistencias/#comprobantes/<%= _id %>/edit" class="btn btn-block btn-default">Ingresar</a></div>
+				    </div><!-- END BOTTOM 
+/gestion/#comprobantes/<%= _id %>/edit-->	
+				 </div>
+
+			
+			
+			

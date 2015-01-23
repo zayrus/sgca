@@ -1,0 +1,21 @@
+<div class='col-sm-12'>
+<form class='form form-horizontal'>
+	<div class="form-group">
+     	<div class="col-sm-6">
+  			<select class="form-control" id="prduser" name="prduser" >
+    		<%= utils.buildSelectOptions('prduser',usersOptionList, '') %>
+  			</select>
+     	</div>
+     	<div class="col-sm-6">
+  			<select class="form-control" id="prdgroup" name="prdgroup" >
+    		<%= utils.buildSelectOptions('prdgroup',groupsOptionList, '') %>
+  			</select>
+     	</div>
+      <div class="col-sm-6">
+        <select class="form-control" id="prdsessions" name="prdsessions" >
+        <%= utils.buildSelectOptions('prdsessions',sessionsOptionList, '') %>
+        </select>
+      </div>
+	</div>
+</form>
+</div>

@@ -1,0 +1,44 @@
+<h1><%= datatitle %></h1>
+<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<label for="estado_alta" class="col-sm-4 control-label"  >Estado</label>
+		<div class="col-sm-8">
+			<select class="form-control input-sm" id="estado_alta" name="estado_alta" value="<%= estado_alta %>">
+				<%= utils.buildSelectOptions('estado_alta',utils.estadoaltaOptionList, estado_alta) %>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="nivel_ejecucion" class="col-sm-4 control-label"  >Avance</label>
+		<div class="col-sm-8">
+			<select class="form-control input-sm" id="nivel_ejecucion" name="nivel_ejecucion" value="<%= nivel_ejecucion %>">
+				<%= utils.buildSelectOptions('nivel_ejecucion',utils.paexecutionOptionList, nivel_ejecucion) %>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="nivel_importancia" class="col-sm-4 control-label"  >Urgencia/ importancia</label>
+		<div class="col-sm-8">
+			<select class="form-control input-sm" id="nivel_importancia" name="nivel_importancia" value="<%= nivel_importancia %>">
+				<%= utils.buildSelectOptions('nivel_importancia',utils.nivelimportanciaOptionList, nivel_importancia) %>
+			</select>
+		</div>
+	</div>
+
+
+	<div class="list-group" ><h3>Procesos pendientes</h3></div>
+
+	<div class="form-group">
+		<% _.each(pendientes, function(value, key){%>
+			<div class="col-sm-4">
+			<div class="input-group ">
+				<span class="input-group-addon">
+		    <input type="checkbox" name="<%= key %>" value=<%= value.cumplido %>  
+		         <%= ((value.cumplido) ? "checked" : "") %>   ></span>
+				  <span class="input-group-btn"><button id='<%= key %>' name='<%= key %>'  class="btn <%= utils.getUrgenciaButtonType(value.cumplido, value.prioridad, value.estado) %> js-pendings" type="button"><%= key %></button></span>
+			</div>
+			</div>
+	<% })%>
+	</div>
+
+</form>
